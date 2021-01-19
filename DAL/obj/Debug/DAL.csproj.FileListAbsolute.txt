@@ -159,15 +159,6 @@ D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\bin\
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CopyComplete
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\DAL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\DAL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\EL.dll
@@ -221,3 +212,13 @@ C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.c
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.dll
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\Ionic.Zip.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.pdb

@@ -115,11 +115,6 @@ D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\EL\bin\D
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\EL\obj\Debug\EL.csprojResolveAssemblyReference.cache
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\EL\obj\Debug\EL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\EL\obj\Debug\EL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\bin\Debug\EL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\bin\Debug\EL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\EL\bin\Debug\EL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\EL\bin\Debug\EL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\EL\obj\Debug\EL.dll
@@ -128,7 +123,6 @@ D:\IntranetGit\EL\bin\Debug\EL.dll
 D:\IntranetGit\EL\bin\Debug\EL.pdb
 D:\IntranetGit\EL\obj\Debug\EL.dll
 D:\IntranetGit\EL\obj\Debug\EL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.csprojAssemblyReference.cache
 C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\EL\bin\Debug\EL.dll
 C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\EL\bin\Debug\EL.pdb
 C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\EL\obj\Debug\EL.dll
@@ -156,3 +150,11 @@ C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\EL\obj\Debug\EL.csp
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\EL\obj\Debug\EL.dll
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\EL\obj\Debug\EL.pdb
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\EL\obj\Debug\EL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\bin\Debug\Ionic.Zip.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\EL\obj\Debug\EL.pdb

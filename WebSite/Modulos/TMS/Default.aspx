@@ -391,10 +391,10 @@
 
             <div >
                 <asp:GridView ID="GVPlaneamiento" runat="server" GridLines="None" AutoGenerateColumns="False" EmptyDataText="No se encontraron resultados"
-                 OnRowCommand="GVPlaneamiento_RowCommand" 
+                 OnRowCommand="GVPlaneamiento_RowCommand" CssClass="table table-striped table-bordered"
                 > 
                     <%--CssClass="table table-striped table-bordered" scrollable-table dataTables_scroll OnPreRender="GVPlaneamiento_PreRender"--%>
-                    <%--style="overflow-x:scroll;overflow:scroll;max-height:150px;width:500px;" CssClass="table table-striped table-bordered"--%>
+                    <%--style="overflow-x:scroll;overflow:scroll;max-height:150px;width:500px;" --%>
                 <Columns>
 
                     <asp:TemplateField ItemStyle-CssClass="FrozenCell" HeaderStyle-CssClass="FrozenCell">

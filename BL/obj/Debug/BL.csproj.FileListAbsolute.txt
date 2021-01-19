@@ -217,17 +217,6 @@ D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\D
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.pdb
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csprojAssemblyReference.cache
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CopyComplete
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.dll
-C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\BL.dll
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\BL.pdb
 D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\DAL.dll
@@ -295,3 +284,15 @@ C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.csp
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.csproj.CopyComplete
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.dll
 C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\Ionic.Zip.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.pdb
