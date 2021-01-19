@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="TM_ListarConductores">
+        <s:complexType />
+      </s:element>
+      <s:element name="TM_ListarConductoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TM_ListarConductoresResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TM_ListarConductoresSoapIn">
+    <wsdl:part name="parameters" element="tns:TM_ListarConductores" />
+  </wsdl:message>
+  <wsdl:message name="TM_ListarConductoresSoapOut">
+    <wsdl:part name="parameters" element="tns:TM_ListarConductoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="TM_ListarConductoresHttpGetIn" />
+  <wsdl:message name="TM_ListarConductoresHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TM_ListarConductoresHttpPostIn" />
+  <wsdl:message name="TM_ListarConductoresHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="apiSoap">
+    <wsdl:operation name="TM_ListarConductores">
+      <wsdl:input message="tns:TM_ListarConductoresSoapIn" />
+      <wsdl:output message="tns:TM_ListarConductoresSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="apiHttpGet">
+    <wsdl:operation name="TM_ListarConductores">
+      <wsdl:input message="tns:TM_ListarConductoresHttpGetIn" />
+      <wsdl:output message="tns:TM_ListarConductoresHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="apiHttpPost">
+    <wsdl:operation name="TM_ListarConductores">
+      <wsdl:input message="tns:TM_ListarConductoresHttpPostIn" />
+      <wsdl:output message="tns:TM_ListarConductoresHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="apiSoap" type="tns:apiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TM_ListarConductores">
+      <soap:operation soapAction="http://tempuri.org/TM_ListarConductores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="apiSoap12" type="tns:apiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TM_ListarConductores">
+      <soap12:operation soapAction="http://tempuri.org/TM_ListarConductores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="apiHttpGet" type="tns:apiHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="TM_ListarConductores">
+      <http:operation location="/TM_ListarConductores" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="apiHttpPost" type="tns:apiHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="TM_ListarConductores">
+      <http:operation location="/TM_ListarConductores" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="api">
+    <wsdl:port name="apiSoap" binding="tns:apiSoap">
+      <soap:address location="https://www.meridian.com.pe/recursoshumanos/servicios/api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="apiSoap12" binding="tns:apiSoap12">
+      <soap12:address location="https://www.meridian.com.pe/recursoshumanos/servicios/api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="apiHttpGet" binding="tns:apiHttpGet">
+      <http:address location="https://www.meridian.com.pe/recursoshumanos/servicios/api.asmx" />
+    </wsdl:port>
+    <wsdl:port name="apiHttpPost" binding="tns:apiHttpPost">
+      <http:address location="https://www.meridian.com.pe/recursoshumanos/servicios/api.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

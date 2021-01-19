@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6B39950-4D75-4B0D-9AF9-BDB0B35E61DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbastecimientoDAL.cs" />
+    <Compile Include="ReporteDAL.cs" />
+    <Compile Include="AlertaDAL.cs" />
+    <Compile Include="CisternaDAL.cs" />
+    <Compile Include="ClienteDAL.cs" />
+    <Compile Include="CombustibleDAL.cs" />
+    <Compile Include="CombustibleDetDAL.cs" />
+    <Compile Include="ContenedorDAL.cs" />
+    <Compile Include="DescansoMedicoDAL.cs" />
+    <Compile Include="DocumentacionDAL.cs" />
+    <Compile Include="EcoMenuDAL.cs" />
+    <Compile Include="CorreoDAL.cs" />
+    <Compile Include="EquipoProteccionDAL.cs" />
+    <Compile Include="EstadisticaDAL.cs" />
+    <Compile Include="EstadisticaOPDAL.cs" />
+    <Compile Include="FlotaDAL.cs" />
+    <Compile Include="GrifoDAL.cs" />
+    <Compile Include="ItemDAL.cs" />
+    <Compile Include="LiquidacionDAL.cs" />
+    <Compile Include="MantenimientoDAL.cs" />
+    <Compile Include="MaquinariaDAL.cs" />
+    <Compile Include="NaveDAL.cs" />
+    <Compile Include="NeumaticoDAL.cs" />
+    <Compile Include="NombradaDAL.cs" />
+    <Compile Include="OrdenServicioDAL.cs" />
+    <Compile Include="OrdenTrabajoDAL.cs" />
+    <Compile Include="ReposicionDAL.cs" />
+    <Compile Include="SeguimientoDAL.cs" />
+    <Compile Include="SIG_EmpresaDAL.cs" />
+    <Compile Include="SolicitudDAL.cs" />
+    <Compile Include="SolicitudDstDAL.cs" />
+    <Compile Include="TarifaDAL.cs" />
+    <Compile Include="TerceroConductorDAL.cs" />
+    <Compile Include="TerceroDocumentacionDAL.cs" />
+    <Compile Include="TerceroEmpresaDAL.cs" />
+    <Compile Include="TerceroUnidadDAL.cs" />
+    <Compile Include="TMS\TPLDAL.cs" />
+    <Compile Include="TMS_ClientesDAL.cs" />
+    <Compile Include="TMS_EmailClienteDAL.cs" />
+    <Compile Include="TMS_EmpresaDAL.cs" />
+    <Compile Include="TMS_LocalDAL.cs" />
+    <Compile Include="TMS_NotificacionesDAL.cs" />
+    <Compile Include="TMS_PreFacturacionDAL.cs" />
+    <Compile Include="TMS_SeguimientoDAL.cs" />
+    <Compile Include="TMS_SolicitudDAL.cs" />
+    <Compile Include="UbigeoDAL.cs" />
+    <Compile Include="CatalogoDAL.cs" />
+    <Compile Include="HelperBase.cs" />
+    <Compile Include="EmpleadoDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerHelper_static.cs" />
+    <Compile Include="FactElectronicaDAL.cs" />
+    <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="VacacionesDAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EL\EL.csproj">
+      <Project>{0fd28c6c-5909-40be-abf6-40353f68e41d}</Project>
+      <Name>EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

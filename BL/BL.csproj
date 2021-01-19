@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6FC9298-DC36-4760-98D8-7A6ECB8DFE7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BL</RootNamespace>
+    <AssemblyName>BL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbastecimientoBL.cs" />
+    <Compile Include="ReporteBL.cs" />
+    <Compile Include="AlertaBL.cs" />
+    <Compile Include="CisternaBL.cs" />
+    <Compile Include="ClienteBL.cs" />
+    <Compile Include="CombustibleBL.cs" />
+    <Compile Include="CombustibleDetBL.cs" />
+    <Compile Include="ContenedorBL.cs" />
+    <Compile Include="DescansoMedicoBL.cs" />
+    <Compile Include="DocumentacionBL.cs" />
+    <Compile Include="EcoMenuBL.cs" />
+    <Compile Include="CorreoBL.cs" />
+    <Compile Include="EmpleadoBL.cs" />
+    <Compile Include="EquipoProteccionBL.cs" />
+    <Compile Include="EstadisticaBL.cs" />
+    <Compile Include="EstadisticaOPBL.cs" />
+    <Compile Include="FlotaBL.cs" />
+    <Compile Include="GrifoBL.cs" />
+    <Compile Include="ItemBL.cs" />
+    <Compile Include="LiquidacionBL.cs" />
+    <Compile Include="MantenimientoBL.cs" />
+    <Compile Include="MaquinariaBL.cs" />
+    <Compile Include="NaveBL.cs" />
+    <Compile Include="NeumaticoBL.cs" />
+    <Compile Include="NombradaBL.cs" />
+    <Compile Include="OrdenServicioBL.cs" />
+    <Compile Include="OrdenTrabajoBL.cs" />
+    <Compile Include="ReposicionBL.cs" />
+    <Compile Include="SeguimientoBL.cs" />
+    <Compile Include="SIG_EmpresaBL.cs" />
+    <Compile Include="SolicitudBL.cs" />
+    <Compile Include="SolicitudDstBL.cs" />
+    <Compile Include="TMS_ClientesBL.cs" />
+    <Compile Include="TMS_EmailClienteBL.cs" />
+    <Compile Include="TMS_EmpresaBL.cs" />
+    <Compile Include="TMS_LocalBL.cs" />
+    <Compile Include="TMS_NotificacionesBL.cs" />
+    <Compile Include="TMS_PreFacturacionBL.cs" />
+    <Compile Include="TMS_SeguimientoBL.cs" />
+    <Compile Include="TMS_SolicitudBL.cs" />
+    <Compile Include="TPLBL.cs" />
+    <Compile Include="TarifaBL.cs" />
+    <Compile Include="TerceroConductorBL.cs" />
+    <Compile Include="TerceroDocumentacionBL.cs" />
+    <Compile Include="TerceroEmpresaBL.cs" />
+    <Compile Include="TerceroUnidadBL.cs" />
+    <Compile Include="UbigeoBL.cs" />
+    <Compile Include="CatalogoBL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FactElectronicaBL.cs" />
+    <Compile Include="UsuarioBL.cs" />
+    <Compile Include="VacacionesBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{e6b39950-4d75-4b0d-9af9-bdb0b35e61dd}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EL\EL.csproj">
+      <Project>{0fd28c6c-5909-40be-abf6-40353f68e41d}</Project>
+      <Name>EL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

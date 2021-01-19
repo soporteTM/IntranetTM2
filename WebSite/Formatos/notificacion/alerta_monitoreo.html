@@ -1,0 +1,255 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Transportes Meridian</title>
+    <style>
+        html {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            line-height: 16px;
+            padding: 0;
+            margin: 0px;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            height: 100%;
+            -webkit-text-size-adjust: none;
+            width: 100% !important;
+            padding: 0;
+            margin: 0px;
+        }
+
+        a {
+            color: #348eda;
+        }
+
+        .btn-primary {
+            Margin-bottom: 10px;
+            width: auto !important;
+        }
+
+        table.label {
+            max-width: 400px;
+        }
+
+            table.label tr td {
+                padding: 3px 5px;
+                border: solid 1px #ccc;
+            }
+
+            table.label td.bg1 {
+                background-color: #ddd;
+            }
+
+        table.table {
+        }
+
+            table.table tr th,
+            table.table tr td {
+                padding: 3px 5px;
+                border: solid 1px #ccc;
+                text-align: center;
+            }
+
+        .right {
+            text-align: right !important;
+        }
+
+        table.table tr th {
+            background-color: #ddd;
+        }
+
+        table.table tfoot tr td {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .btn-primary td {
+            background-color: #34495e;
+            border-radius: 3px;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-size: 14px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+            .btn-primary td a {
+                background-color: #34495e;
+                border: solid 1px #34495e;
+                border-radius: 3px;
+                border-width: 4px 20px;
+                display: inline-block;
+                color: #ffffff;
+                cursor: pointer;
+                font-weight: bold;
+                line-height: 1.5;
+                text-decoration: none;
+            }
+
+
+
+        table.body-wrap {
+            padding: 20px;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+            table.body-wrap .container {
+                border: 1px solid #e4e5e7;
+            }
+
+        table.footer-wrap {
+            clear: both !important;
+            width: 100%;
+        }
+
+        .footer-wrap .container p {
+            color: #666666;
+            font-size: 12px;
+        }
+
+        table.footer-wrap a {
+            color: #999999;
+        }
+
+        hr {
+            margin-bottom: 10px;
+            border: solid 1px #ddd;
+            height: 0px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #111111;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            font-weight: 200;
+            line-height: 1.2em;
+            margin: 40px 0 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h3 {
+            font-size: 22px;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 13px;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+            ul li,
+            ol li {
+                margin-left: 5px;
+                list-style-position: inside;
+            }
+
+
+        
+        .container {
+            clear: both !important;
+            display: block !important;
+            Margin: 0 auto !important;
+            max-width: 600px !important;
+        }
+
+        
+        .body-wrap .container {
+            padding: 20px 40px 30px 40px;
+        }
+
+        
+        .content {
+            display: block;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+            
+            .content table {
+                width: 100%;
+            }
+    </style>
+</head>
+
+<body bgcolor="#f7f9fa">
+
+    <table class="body-wrap" bgcolor="#f7f9fa" width="800" style="width:600px;">
+        <tr>
+            <td></td>
+            <td class="container" bgcolor="#FFFFFF">
+
+                <div class="content" style="width:600px; margin:auto;">
+                    <table>
+                        <tr>
+                            <td>
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="text-align:center;"><img src="https://www.tmeridian.com.pe/img/logo-transportes-meridian.png" width="180" /></td>
+                                    </tr>
+                                </table>
+								<br><br>
+                                <h4 style="text-align:center;">Alerta de Monitoreo</h4>
+
+                                <p style="margin-bottom:0px; padding-bottom:0px;"><b>¡Hola!</b> {cliente}, <br /><br />
+                                A CONTINUACIÓN te brindamos un nuevo estatus de tus cargas del dia de hoy {fecha}.</p>
+                                <br />
+                                <hr style="margin-bottom: 10px;	border: solid 1px #ddd;	height: 0px;" />
+                                <br />
+								{detalle}
+                                
+
+                                <br />
+                                <br />
+                                <p>
+                                    Atte.<br />
+                                    <span style="font-weight:600;">Transportes Meridian</span>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class="footer-wrap">
+        <tr>
+            <td></td>
+            <td class="container">
+
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td align="center">
+                                <p>
+                                    Toda esta informaci&oacute;n es de uso confidencial.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+</body>
+</html>

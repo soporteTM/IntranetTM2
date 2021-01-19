@@ -1,0 +1,1586 @@
+﻿using System; 
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using BL;
+using EL; 
+using System.Collections.Generic;
+
+using System.Data;
+using System.Text;
+using System.IO; 
+using System.Drawing;
+using System.Web.Script.Serialization;
+public partial class cliente_default : System.Web.UI.Page
+{
+    public CatalogoBL objCatalogo = new CatalogoBL();
+    public UbigeoBL objUbigeo = new UbigeoBL();
+    public EmpleadoBL objEmpleado = new EmpleadoBL();
+    //public BD_IntranetFIEntities CMScontext = new BD_IntranetFIEntities();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+            //string va = "";
+            ////BD_IntranetFIEntities CMScontext = new BD_IntranetFIEntities();
+            //var data = from cont in CMScontext.TRF_Ubigeo where cont.cod_provincia.Equals("01") && cont.cod_departamento.Equals("15") && cont.descripcion.Contains("LI") select new { id = cont.cod_distrito, descripcion = cont.descripcion };
+            //var json = new JavaScriptSerializer().Serialize(data.ToList());
+            //va = json.ToString();
+            Session["EmpleadoFamilia"] = new List<EmpleadoFamiliaEL>();
+            Session["EmpleadoFormacion"] = new List<EmpleadoFormacionEL>();
+            Session["EmpleadoIdioma"] = new List<EmpleadoIdiomaEL>();
+            Session["EmpleadoInteres"] = new List<EmpleadoInteresEL>();
+            Session["EmpleadoExperiencia"] = new List<EmpleadoExperienciaEL>();
+
+            Session["EmpleadoEconomica"] = null;
+
+            if (Request.QueryString["opcion"] == "registro")
+            {
+                MultiView1.ActiveViewIndex =1;
+            }
+
+            if (Request.QueryString["opcion"] == "documentacion")
+            {
+                MultiView1.ActiveViewIndex = 2;
+            }
+
+            cargarDatos();
+            cargarEmpleados();
+        }
+    }
+
+    public void cargarDatos()
+    {
+        cargarTipoDocumento();
+        cargarSexo();
+        cargarEstadoCivil();
+        cargarDiscapacitado();
+        cargarPais();
+        cargarDepartamento();
+        cargarParentesco();
+        cargarGradoInstruccion();
+        cargarAnnos();
+        cargarIdioma();
+        cargarIdiomaNivel();
+        cargarInteres();
+        cargarBancoEmisor();
+        cargarTipoVivienda();
+        cargarMeses();  
+
+    }
+
+    public void cargarTipoDocumento()
+    {
+       
+        this.ddlTipoDocumento.DataSource = objCatalogo.ListarItem("00");
+        ddlTipoDocumento.DataTextField = "descripcion";
+        ddlTipoDocumento.DataValueField = "id_descripcion";
+        ddlTipoDocumento.DataBind();
+        ddlTipoDocumento.Items.Insert(0, new ListItem("", ""));
+        ddlTipoDocumento.SelectedIndex = 1;
+    }
+    public void cargarSexo()
+    {
+        this.ddlSexo.DataSource = objCatalogo.ListarItem("04");
+        ddlSexo.DataTextField = "descripcion";
+        ddlSexo.DataValueField = "id_descripcion";
+        ddlSexo.DataBind();
+        ddlSexo.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarEstadoCivil()
+    {
+        this.ddlEstadoCivil.DataSource = objCatalogo.ListarItem("01");
+        ddlEstadoCivil.DataTextField = "descripcion";
+        ddlEstadoCivil.DataValueField = "id_descripcion";
+        ddlEstadoCivil.DataBind();
+        ddlEstadoCivil.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarDiscapacitado()
+    {
+        this.ddlDiscapacitado.DataSource = objCatalogo.ListarItem("14");
+        ddlDiscapacitado.DataTextField = "descripcion";
+        ddlDiscapacitado.DataValueField = "id_descripcion";
+        ddlDiscapacitado.DataBind();
+        ddlDiscapacitado.Items.Insert(0, new ListItem("", ""));
+        ddlDiscapacitado.SelectedIndex = 2;
+
+        this.ddlLlamarEmergenciaFamiliar.DataSource = ddlDiscapacitado.DataSource;
+        ddlLlamarEmergenciaFamiliar.DataTextField = "descripcion";
+        ddlLlamarEmergenciaFamiliar.DataValueField = "id_descripcion";
+        ddlLlamarEmergenciaFamiliar.DataBind();
+        ddlLlamarEmergenciaFamiliar.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlLee.DataSource = ddlDiscapacitado.DataSource;
+        ddlLee.DataTextField = "descripcion";
+        ddlLee.DataValueField = "id_descripcion";
+        ddlLee.DataBind();
+        ddlLee.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlEscribe.DataSource = ddlDiscapacitado.DataSource;
+        ddlEscribe.DataTextField = "descripcion";
+        ddlEscribe.DataValueField = "id_descripcion";
+        ddlEscribe.DataBind();
+        ddlEscribe.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlHabla.DataSource = ddlDiscapacitado.DataSource;
+        ddlHabla.DataTextField = "descripcion";
+        ddlHabla.DataValueField = "id_descripcion";
+        ddlHabla.DataBind();
+        ddlHabla.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlPoseeCtaBanco.DataSource = ddlDiscapacitado.DataSource;
+        ddlPoseeCtaBanco.DataTextField = "descripcion";
+        ddlPoseeCtaBanco.DataValueField = "id_descripcion";
+        ddlPoseeCtaBanco.DataBind();
+        ddlPoseeCtaBanco.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlPoseTarjBanco.DataSource = ddlDiscapacitado.DataSource;
+        ddlPoseTarjBanco.DataTextField = "descripcion";
+        ddlPoseTarjBanco.DataValueField = "id_descripcion";
+        ddlPoseTarjBanco.DataBind();
+        ddlPoseTarjBanco.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlVigenciaDocumento.DataSource = ddlDiscapacitado.DataSource;
+        ddlVigenciaDocumento.DataTextField = "descripcion";
+        ddlVigenciaDocumento.DataValueField = "id_descripcion";
+        ddlVigenciaDocumento.DataBind();
+        //ddlPoseTarjBanco.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarPais()
+    {
+        this.ddlPais.DataSource = objCatalogo.ListarItem("15");
+        ddlPais.DataTextField = "descripcion";
+        ddlPais.DataValueField = "id_descripcion";
+        ddlPais.DataBind();
+        ddlPais.Items.Insert(0, new ListItem("", ""));
+
+        ddlPais.SelectedIndex = 1;
+
+    }
+    public void cargarDepartamento()
+    {
+        this.ddlDepartamento.DataSource = objUbigeo.ListarUbigeo("","00","00");
+        ddlDepartamento.DataTextField = "descripcion";
+        ddlDepartamento.DataValueField = "cod_departamento";
+        ddlDepartamento.DataBind();
+        ddlDepartamento.Items.Insert(0, new ListItem("", ""));
+
+        ddlDistrito.Items.Clear();
+        ddlProvincia.Items.Clear();
+        ddlProvincia.Items.Insert(0, new ListItem("", ""));
+        ddlDistrito.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarProvincia()
+    {
+        ddlProvincia.Items.Clear();
+        List<UbigeoEL> data = objUbigeo.ListarUbigeo(ddlDepartamento.SelectedValue, "", "00");
+        if (data.Count > 0 && ddlDepartamento.SelectedValue != "")
+        {
+            var query = data.Where(person => person.cod_provincia != "00");
+            ddlProvincia.DataSource = query.ToList();
+            ddlProvincia.DataTextField = "descripcion";
+            ddlProvincia.DataValueField = "cod_provincia";
+            ddlProvincia.DataBind();
+        }
+
+        
+        ddlProvincia.Items.Insert(0, new ListItem("", ""));
+        ddlDistrito.Items.Clear();
+        ddlDistrito.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarDistrito()
+    {
+        ddlDistrito.Items.Clear();
+        List<UbigeoEL> data = objUbigeo.ListarUbigeo(ddlDepartamento.SelectedValue, ddlProvincia.SelectedValue, "");
+        if (data.Count > 0 && ddlProvincia.SelectedValue != "")
+        {
+            var query = data.Where(person => person.cod_provincia != "00" && person.cod_distrito != "00");
+            ddlDistrito.DataSource = query.ToList();
+            ddlDistrito.DataTextField = "descripcion";
+            ddlDistrito.DataValueField = "cod_distrito";
+            ddlDistrito.DataBind();
+        }
+        ddlDistrito.Items.Insert(0, new ListItem("", "")); 
+    }
+    public void cargarParentesco()
+    {
+        this.ddlParentesco.DataSource = objCatalogo.ListarItem("06");
+        ddlParentesco.DataTextField = "descripcion";
+        ddlParentesco.DataValueField = "id_descripcion";
+        ddlParentesco.DataBind();
+        ddlParentesco.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarGradoInstruccion()
+    {
+        this.ddlGradoFormacion.DataSource = objCatalogo.ListarItem("16");
+        ddlGradoFormacion.DataTextField = "descripcion";
+        ddlGradoFormacion.DataValueField = "id_descripcion";
+        ddlGradoFormacion.DataBind();
+        ddlGradoFormacion.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarIdioma()
+    {
+        this.ddlIdioma.DataSource = objCatalogo.ListarItem("07");
+        ddlIdioma.DataTextField = "descripcion";
+        ddlIdioma.DataValueField = "id_descripcion";
+        ddlIdioma.DataBind();
+        ddlIdioma.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarIdiomaNivel()
+    {
+        this.ddlIdiomaNivel.DataSource = objCatalogo.ListarItem("17");
+        ddlIdiomaNivel.DataTextField = "descripcion";
+        ddlIdiomaNivel.DataValueField = "id_descripcion";
+        ddlIdiomaNivel.DataBind();
+        ddlIdiomaNivel.Items.Insert(0, new ListItem("", ""));
+
+        this.ddlNivelInteres.DataSource = ddlIdiomaNivel.DataSource;
+        ddlNivelInteres.DataTextField = "descripcion";
+        ddlNivelInteres.DataValueField = "id_descripcion";
+        ddlNivelInteres.DataBind();
+        ddlNivelInteres.Items.Insert(0, new ListItem("", ""));
+    }
+    public void cargarAnnos()
+    {
+        int AnnoActual = DateTime.Now.Year;
+        int AnnoInicio = AnnoActual - 30;
+
+        for(int i = AnnoInicio; i <= AnnoActual; i++) {
+            ddlAnnoIntruccionInicio.Items.Insert(0,i.ToString());
+            ddlAnnoIntruccionFin.Items .Insert(0,i.ToString());
+
+            ddlExperienciaAnnoFin.Items.Insert(0, i.ToString()); 
+            ddlExperienciaAnnoInicio.Items.Insert(0, i.ToString());
+        } 
+        ddlAnnoIntruccionInicio.Items.Insert(0, new ListItem("", ""));
+        ddlAnnoIntruccionFin.Items.Insert(0, new ListItem("", ""));
+
+        ddlExperienciaAnnoFin.Items.Insert(0, new ListItem("", "")); 
+        ddlExperienciaAnnoInicio.Items.Insert(0, new ListItem("", "")); 
+
+    }
+    public void cargarInteres()
+    {
+        this.ddlInteres.DataSource = objCatalogo.ListarItem("09");
+        ddlInteres.DataTextField = "descripcion";
+        ddlInteres.DataValueField = "id_descripcion";
+        ddlInteres.DataBind();
+        ddlInteres.Items.Insert(0, new ListItem("", ""));
+        ddlInteres.Items.Add(  new ListItem("OTROS", "00"));
+    }
+    public void cargarBancoEmisor()
+    {
+        this.ddlBancoCta.DataSource = objCatalogo.ListarItem("08");
+        ddlBancoCta.DataTextField = "descripcion";
+        ddlBancoCta.DataValueField = "id_descripcion";
+        ddlBancoCta.DataBind();
+        ddlBancoCta.Items.Insert(0, new ListItem("", "")); 
+
+        this.ddlBancoTarj.DataSource = ddlBancoCta.DataSource;
+        ddlBancoTarj.DataTextField = "descripcion";
+        ddlBancoTarj.DataValueField = "id_descripcion";
+        ddlBancoTarj.DataBind();
+        ddlBancoTarj.Items.Insert(0, new ListItem("", "")); 
+    }
+    public void cargarTipoVivienda()
+    {
+        //this.ddlBancoCta.DataSource = objCatalogo.ListarItem("08");
+        //ddlBancoCta.DataTextField = "descripcion";
+        //ddlBancoCta.DataValueField = "id_descripcion";
+        //ddlBancoCta.DataBind();
+        //ddlBancoCta.Items.Insert(0, new ListItem("", ""));
+
+        //ddlBancoCta.SelectedIndex = 1;
+
+        
+
+    }
+    public void cargarMeses()
+    {  
+        ddlExperienciaMesFin.Items.Add(new ListItem("ENERO", "ENERO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("FEBRERO", "FEBRERO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("MARZO", "MARZO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("ABRIL", "ABRIL"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("MAYO", "MAYO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("JUNIO", "JUNIO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("JULIO", "JULIO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("AGOSTO", "AGOSTO"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("SEPTIEMBRE", "SEPTIEMBRE"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("OCTUBRE", "OCTUBRE"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("NOVIEMBRE", "NOVIEMBRE"));
+        ddlExperienciaMesFin.Items.Add(new ListItem("DICIEMBRE", "DICIEMBRE"));
+
+        ddlExperienciaMesInicio.Items.Add(new ListItem("ENERO", "ENERO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("FEBRERO", "FEBRERO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("MARZO", "MARZO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("ABRIL", "ABRIL"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("MAYO", "MAYO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("JUNIO", "JUNIO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("JULIO", "JULIO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("AGOSTO", "AGOSTO"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("SEPTIEMBRE", "SEPTIEMBRE"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("OCTUBRE", "OCTUBRE"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("NOVIEMBRE", "NOVIEMBRE"));
+        ddlExperienciaMesInicio.Items.Add(new ListItem("DICIEMBRE", "DICIEMBRE")); 
+
+    }
+
+    protected void btnNuevo_Click(object sender, EventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 1; 
+        OcultarModals();
+        setTabs();
+        li1.Attributes.Add("class", "first current");
+        MultiView2.ActiveViewIndex = 0;
+
+        Session["EmpleadoFamilia"] = new List<EmpleadoFamiliaEL>();
+        Session["EmpleadoFormacion"] = new List<EmpleadoFormacionEL>();
+        Session["EmpleadoIdioma"] = new List<EmpleadoIdiomaEL>();
+        Session["EmpleadoInteres"] = new List<EmpleadoInteresEL>();
+        Session["EmpleadoExperiencia"] = new List<EmpleadoExperienciaEL>(); 
+
+        gvIdioma.DataSource = null;
+        gvIdioma.DataBind();
+
+        gvFamiliares.DataSource = null;
+        gvFamiliares.DataBind();
+
+        gvFormacion.DataSource = null;
+        gvFormacion.DataBind();
+
+        gvProgramas.DataSource = null;
+        gvProgramas.DataBind();
+
+        gvExperiencia.DataSource = null;
+        gvExperiencia.DataBind();
+
+        LimpiarFormEmpleado();
+    }
+
+    public void LimpiarFormEmpleado()
+    {
+        HFCodigo.Value = "0";
+        ddlTipoDocumento.SelectedIndex = 0;
+        txtNumeroDocumento.Text="";
+        txtNombres.Text = "";
+        txtApellidoPaterno.Text = "";
+        txtApellidoMaterno.Text = "";
+        ddlSexo.SelectedIndex = 0;
+        ddlEstadoCivil.SelectedIndex = 0;
+        txtFechaNacimiento.Text = "";
+        ddlPais.SelectedIndex = 0;
+        ddlDepartamento.SelectedIndex = 0;
+        ddlProvincia.SelectedIndex = 0;
+        ddlDistrito.SelectedIndex = 0;
+        txtDireccion.Text = "";
+        txtNumero.Text = "";
+        txtInterior.Text = "";
+        txtUrbanizacion.Text = "";
+        txtCodigoIPSS.Text = "";
+        txtCodigoAFP.Text = "";
+        txtNombreAFP.Text = "";
+        txtFechaInscripcion.Text = "";
+        txtCorreo.Text = "";
+        txtTelefono.Text = "";
+        txtTelefonoPersonal.Text = "";
+        txtIndicacionesMedicas.Text = "";
+
+        ddlPoseTarjBanco.SelectedIndex = 0;
+        ddlBancoCta.SelectedIndex = 0;
+        ddlPoseeCtaBanco.SelectedIndex = 0;
+        ddlBancoTarj.SelectedIndex = 0;
+
+        txtOtrosMueblesInmuebles.Text = "";
+        txtVehiculoPlaca.Text = "";
+        txtVehiculoModelo.Text = "";
+        txtVehiculoMarca.Text = "";
+        txtTipoVivienda.Text = "";
+        txtValorActivos.Text = "";
+        txtIngresoEconomicoAdicional.Text = "";
+        txtTipoLicencia.Text = "";
+        txtNumLicencia.Text = "";
+
+        buscar_mapa.Text = "";
+        lon.Text = "";
+        lat.Text = "";
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 0;
+    }
+
+    protected void btnRegresarDocumento_Click(object sender, EventArgs e)
+    {
+        MultiView1.ActiveViewIndex = 0;
+    }    
+
+    public void cargarEmpleados()
+    {
+        gvMarcas.DataSource = objEmpleado.Consultar("");
+        gvMarcas.DataBind();
+    }
+ 
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        EmpleadoEL empleado = new EmpleadoEL();
+        empleado.id_key = Convert.ToInt32(HFCodigo.Value);
+        empleado.cod_emp = "";
+        empleado.cod_tipo = ddlTipoDocumento.SelectedValue;
+        empleado.nro_documento = txtNumeroDocumento.Text;
+        empleado.nombre_emp = txtNombres.Text;
+        empleado.apellido_pat = txtApellidoPaterno.Text;
+        empleado.apellido_mat = txtApellidoMaterno.Text;
+        empleado.cod_genero = ddlSexo.SelectedValue;
+        empleado.cod_civil = ddlEstadoCivil.SelectedValue;
+        empleado.fch_nacimiento = Convert.ToDateTime("01/01/1900");
+        DateTime fecha_nacimiendo;
+        if (DateTime.TryParse(txtFechaNacimiento.Text, out fecha_nacimiendo))
+            empleado.fch_nacimiento = fecha_nacimiendo; 
+
+        empleado.nacionalidad = ddlPais.SelectedValue;
+        empleado.ubigeo = ddlDepartamento.SelectedValue + ddlProvincia.SelectedValue + ddlDistrito.SelectedValue;
+        empleado.domicilio = txtDireccion.Text;
+        empleado.nro_domicilio = txtNumero.Text;
+        empleado.nro_int = txtInterior.Text;
+        empleado.urbanizacion = txtUrbanizacion.Text;
+
+        empleado.email = txtCorreo.Text;
+        empleado.telf_trabajo = txtTelefono.Text;
+        empleado.telf_personal = txtTelefonoPersonal.Text;
+        empleado.cod_dpto_laboral = ddlProceso.SelectedValue;
+        empleado.cod_puesto_laboral = ddlCargo.SelectedValue;
+        empleado.cod_jefatura = ddlJefatura.SelectedValue;
+        empleado.ingreso_mensual_extra = 0;
+        //if (txtIngresoEconomicoAdicional.Text.Length > 0)
+        //    empleado.ingreso_mensual_extra = Convert.ToDecimal(txtIngresoEconomicoAdicional.Text);
+
+        empleado.tipo_viviendo = txtTipoVivienda.Text;
+        empleado.tipo_licencia = txtTipoLicencia.Text;
+        empleado.nro_licencia = txtNumLicencia.Text;
+
+        empleado.observaciones_medicas = txtIndicacionesMedicas.Text;
+        empleado.estado = "R";
+        empleado.cod_cese = "";
+        empleado.fecha_cese = Convert.ToDateTime("01/01/1900");
+        empleado.img_personal = "";
+
+        empleado.latitud = lat.Text;
+        empleado.longitud = lon.Text;
+        empleado.referencia_google_maps = buscar_mapa.Text;
+        empleado.carpeta_compartida = "";
+
+       List <TransaccionEL> tnx = new List<TransaccionEL>();
+        bool continuar = true;
+
+        if (empleado.id_key == 0)
+        {
+            tnx = objEmpleado.Registrar(empleado);
+            if (tnx[0].id_mensaje != 1)
+            {
+                continuar = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('" + tnx[0].mensaje + "','Ocurrio un error','error');", true);
+            }
+        }
+        else
+        {
+            tnx = objEmpleado.Actualizar(empleado);
+            if (tnx[0].id_mensaje != 1)
+            {
+                continuar = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('" + tnx[0].mensaje + "','Ocurrio un error','error');", true);
+            }
+
+            //Borrar Detalles
+            tnx = objEmpleado.EliminarDetalle(empleado.id_key);
+            if (tnx[0].id_mensaje != 1)
+            {
+                continuar = false;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('" + tnx[0].mensaje + "','Ocurrio un error','error');", true);
+            }
+
+        }
+
+
+        if (continuar)
+        {
+
+            IList<EmpleadoFamiliaEL> DataFamiliar = (List<EmpleadoFamiliaEL>)Session["EmpleadoFamilia"];
+            foreach (EmpleadoFamiliaEL Familiar in DataFamiliar)
+            {
+                Familiar.cod_id = Convert.ToInt32(tnx[0].mensaje);
+                objEmpleado.RegistrarFamiliar(Familiar);
+            }
+
+            IList<EmpleadoFormacionEL> DataFormacion = (List<EmpleadoFormacionEL>)Session["EmpleadoFormacion"];
+            foreach (EmpleadoFormacionEL Formacion in DataFormacion)
+            {
+                Formacion.cod_id = Convert.ToInt32(tnx[0].mensaje);
+                objEmpleado.RegistrarFormacion(Formacion);
+            }
+
+            IList<EmpleadoIdiomaEL> DataIdioma = (List<EmpleadoIdiomaEL>)Session["EmpleadoIdioma"];
+            foreach (EmpleadoIdiomaEL Idioma in DataIdioma)
+            {
+                Idioma.cod_id = Convert.ToInt32(tnx[0].mensaje);
+                objEmpleado.RegistrarIdioma(Idioma);
+            }
+
+            IList<EmpleadoInteresEL> DataInteres = (List<EmpleadoInteresEL>)Session["EmpleadoInteres"];
+            foreach (EmpleadoInteresEL Interes in DataInteres)
+            {
+                Interes.cod_id = Convert.ToInt32(tnx[0].mensaje);
+                objEmpleado.RegistrarInteres(Interes);
+            }
+
+            IList<EmpleadoExperienciaEL> DataExperiencia = (List<EmpleadoExperienciaEL>)Session["EmpleadoExperiencia"];
+            foreach (EmpleadoExperienciaEL Experiencia in DataExperiencia)
+            {
+                Experiencia.cod_id = Convert.ToInt32(tnx[0].mensaje);
+                objEmpleado.RegistrarExperiencia(Experiencia);
+            }
+
+
+            if (HFCodigo.Value == "0")
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se registro con éxito.','success');", true);
+            else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se actualizo con éxito','success');", true);
+            //    // success / info / warning / error
+
+            MultiView1.ActiveViewIndex = 0;
+            cargarEmpleados();
+        }
+    }
+
+    protected void gvMarcas_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        int id_key = Convert.ToInt32(e.CommandArgument);
+        switch (e.CommandName.ToString())
+        {
+
+            case "editar":
+                EditarEmpleado(Convert.ToInt32(e.CommandArgument));
+                break;
+            case "eliminar":
+
+                List<TransaccionEL> tnx = objEmpleado.Eliminar(id_key);
+                if (tnx[0].id_mensaje == 1)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se elimino con éxito.','success');", true);
+                    cargarEmpleados();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('" + tnx[0].mensaje + "','Ocurrio un error','error');", true);
+                }
+
+                break;
+            case "documento":
+                DocumentoEmpleado(Convert.ToInt32(e.CommandArgument));
+                break;
+        }
+    }
+    public void DocumentoEmpleado(int id_key)
+    {
+
+        List<ItemEL> DataCarpetas = objCatalogo.ListarItem("19");
+        List<ItemEL> ConfigFileServer = objCatalogo.ListarItem("18");
+
+        if (DataCarpetas.Count > 0 && ConfigFileServer.Count > 0)
+        {
+            string carpetaCompartida = ConfigFileServer[0].valor1;
+            if (carpetaCompartida.IndexOf("~") > -1)
+            {
+                carpetaCompartida = Server.MapPath(carpetaCompartida);
+            }
+
+            if (System.IO.Directory.Exists(carpetaCompartida))
+            { 
+                DataTable dataEmpleado = objEmpleado.Consultar_PorCodigo(id_key);
+                string CarpetaEmpleado = "";
+                string CarpetaEmpleado2 = "";
+                if (dataEmpleado.Rows.Count > 0)
+                {
+                    txtEmpleado_id.Text = id_key.ToString();
+                    txtEmpleado.Text = dataEmpleado.Rows[0]["nombre_emp"].ToString() + " " + dataEmpleado.Rows[0]["apellido_pat"].ToString() + " " + dataEmpleado.Rows[0]["apellido_mat"].ToString();
+                    CarpetaEmpleado = dataEmpleado.Rows[0]["nro_documento"].ToString() + " - " + txtEmpleado.Text.ToUpper();
+                    CarpetaEmpleado2 =  dataEmpleado.Rows[0]["nro_documento"].ToString() + " - " + txtEmpleado.Text.ToUpper();
+                    CarpetaEmpleado = carpetaCompartida + CarpetaEmpleado;
+
+                    if (dataEmpleado.Rows[0]["carpeta_compartida"].ToString() == "")
+                        System.IO.Directory.CreateDirectory(CarpetaEmpleado);
+                    else
+                    {
+                        if (System.IO.Directory.Exists(dataEmpleado.Rows[0]["carpeta_compartida"].ToString()))
+                        {
+                            if (dataEmpleado.Rows[0]["carpeta_compartida"].ToString() != CarpetaEmpleado && dataEmpleado.Rows[0]["carpeta_compartida"].ToString() != "")
+                                System.IO.Directory.Move(dataEmpleado.Rows[0]["carpeta_compartida"].ToString(), CarpetaEmpleado);
+                        }
+                        else
+                            System.IO.Directory.CreateDirectory(CarpetaEmpleado);
+
+                    }
+                    //ActualizarRutaCompartida
+                    objEmpleado.Actualizar_CarpetaCompartida(id_key, CarpetaEmpleado2);
+
+                    if (DataCarpetas.Count() > 0)
+                    {
+                        HFCarpetaCompartida.Value = CarpetaEmpleado;
+                        foreach (ItemEL documento in DataCarpetas)
+                        {
+                            if (documento.id_tabla == "00")
+                                documento.valor2 = documento.valor1.Substring(0,3).Trim();
+                            else
+                                documento.valor2 = documento.valor1.Substring(0, 4).Trim();
+                            //documento.valor1 = documento.valor1.Substring(4).Trim();
+                            //documento.valor3 = ConfigFileServer[0].valor1 + documento.valor1;
+                        }
+
+                        List<ItemEL> CarpetasN1 = DataCarpetas.Where(f => f.id_tabla == "00").ToList();
+                        gvCarpetaN1.DataSource = CarpetasN1;
+                        gvCarpetaN1.DataBind();
+
+                        //gvCarpetaN1.Rows[0].CssClass = "selected";
+                        HFCarpetaFicha.Value = gvCarpetaN1.DataKeys[0].Value.ToString();
+
+                        foreach (GridViewRow row in gvCarpetaN1.Rows)
+                        {
+                            GridView gvCarpetaN1_detalle = (GridView)row.FindControl("gvCarpetaN1_detalle");
+                                gvCarpetaN1_detalle.Visible = false;
+                           
+                        }
+
+                        //foreach (ItemEL carpeta in CarpetasN1)
+                        //{
+                        //    string CarpetaDcoumentosEmpleado = CarpetaEmpleado + "/" + carpeta.valor1;
+                        //    if (!System.IO.Directory.Exists(CarpetaDcoumentosEmpleado))
+                        //    {
+                        //        System.IO.Directory.CreateDirectory(CarpetaDcoumentosEmpleado);
+                        //    }
+                        //}
+
+                        //List<ItemEL> CarpetasN2 = DataCarpetas.Where(f => f.id_sub_catalogo == "01" && f.id_tabla != "00").ToList();
+                        //gvCarpetaN2.DataSource = CarpetasN2;
+                        //gvCarpetaN2.DataBind();
+
+                        //gvCarpetaN2.Rows[0].CssClass = "selected";
+
+                        //HFCarpetaActiva.Value = "01";
+                        //HFFichaActiva.Value = "01";
+
+                        //cargarDocumentos();
+
+                        //if (CarpetasN2.Count == 0)
+                        //    panelFichas.Visible = true;
+                    }
+                    btnAgregarArchivo.Visible = false;
+                    MultiView1.ActiveViewIndex = 2;
+                }
+            }
+            else
+                ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('No existe la carpeta compartida: " + carpetaCompartida  + "'','Ocurrio un error','error');", true);
+
+        }
+        else
+            ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('No se encontro la direcicón de la carpeta compartida','Ocurrio un error','error');", true);
+
+    }
+    public void EditarEmpleado(int id_key)
+    {
+        DataTable dataEmpleado = objEmpleado.Consultar_PorCodigo(id_key);
+        
+        if ( dataEmpleado.Rows.Count>0)
+
+        {
+            OcultarModals();
+            setTabs();
+            li1.Attributes.Add("class", "first current");
+            MultiView2.ActiveViewIndex = 0;
+            LimpiarFormEmpleado();
+
+            this.HFCodigo.Value = id_key .ToString();
+ 
+            ddlTipoDocumento.SelectedValue = dataEmpleado.Rows[0]["cod_tipo"].ToString();
+            txtNumeroDocumento.Text = dataEmpleado.Rows[0]["nro_documento"].ToString();
+            txtNombres.Text = dataEmpleado.Rows[0]["nombre_emp"].ToString();
+            txtApellidoPaterno.Text = dataEmpleado.Rows[0]["apellido_pat"].ToString();
+            txtApellidoMaterno.Text = dataEmpleado.Rows[0]["apellido_mat"].ToString();
+            ddlSexo.SelectedValue = dataEmpleado.Rows[0]["cod_genero"].ToString();
+            ddlEstadoCivil.SelectedValue = dataEmpleado.Rows[0]["cod_civil"].ToString();
+            txtFechaNacimiento.Text = dataEmpleado.Rows[0]["fch_nacimiento"].ToString();
+            ddlPais.SelectedValue = dataEmpleado.Rows[0]["nacionalidad"].ToString();
+
+            if (dataEmpleado.Rows[0]["ubigeo"].ToString().Length == 6)
+            {
+                ddlDepartamento.SelectedValue = dataEmpleado.Rows[0]["ubigeo"].ToString().Substring(0,2);
+                cargarProvincia();
+                ddlProvincia.SelectedValue = dataEmpleado.Rows[0]["ubigeo"].ToString().Substring(2, 2);
+                cargarDistrito();
+                ddlDistrito.SelectedValue = dataEmpleado.Rows[0]["ubigeo"].ToString().Substring(4, 2);
+            }
+
+            txtDireccion.Text = dataEmpleado.Rows[0]["domicilio"].ToString();
+            txtNumero.Text = dataEmpleado.Rows[0]["nro_domicilio"].ToString();
+            txtInterior.Text = dataEmpleado.Rows[0]["nro_int"].ToString();
+            txtUrbanizacion.Text = dataEmpleado.Rows[0]["urbanizacion"].ToString();
+            txtCodigoIPSS.Text = dataEmpleado.Rows[0]["cod_ipss"].ToString();
+            txtCodigoAFP.Text = dataEmpleado.Rows[0]["cod_afiliacion"].ToString();
+            txtNombreAFP.Text = dataEmpleado.Rows[0]["num_afiliacion"].ToString();
+            if (dataEmpleado.Rows[0]["fch_afiliacion"].ToString().Trim() != "01/01/1900 12:00:00 a. m.")
+                txtFechaInscripcion.Text = dataEmpleado.Rows[0]["fch_afiliacion"].ToString();
+
+            txtCorreo.Text = dataEmpleado.Rows[0]["email"].ToString();
+            txtTelefono.Text = dataEmpleado.Rows[0]["telf_trabajo"].ToString();
+            txtTelefonoPersonal.Text = dataEmpleado.Rows[0]["telf_personal"].ToString();
+            txtIndicacionesMedicas.Text = dataEmpleado.Rows[0]["observaciones_medicas"].ToString();
+
+            txtIngresoEconomicoAdicional.Text =   dataEmpleado.Rows[0]["ingreso_mensual_extra"].ToString();
+            txtTipoVivienda.Text = dataEmpleado.Rows[0]["tipo_viviendo"].ToString();
+            txtTipoLicencia.Text = dataEmpleado.Rows[0]["tipo_licencia"].ToString();
+            txtNumLicencia.Text = dataEmpleado.Rows[0]["nro_licencia"].ToString();
+
+            buscar_mapa.Text = dataEmpleado.Rows[0]["referencia_google_maps"].ToString();
+            lat.Text = dataEmpleado.Rows[0]["latitud"].ToString();
+            lon.Text = dataEmpleado.Rows[0]["longitud"].ToString();
+            //
+
+            //Cargando Detalle
+            IList<EmpleadoFamiliaEL> DataFamiliar = objEmpleado.Consultar_EmpleadoFamiliar_PorCodigo(id_key);
+            Session["EmpleadoFamilia"] = DataFamiliar;
+            gvFamiliares.DataSource = DataFamiliar;
+            gvFamiliares.DataBind();
+
+            IList<EmpleadoIdiomaEL> DataIdioma = objEmpleado.Consultar_EmpleadoIdioma_PorCodigo(id_key);
+            Session["EmpleadoIdioma"] = DataIdioma;
+            gvIdioma.DataSource = DataIdioma;
+            gvIdioma.DataBind();
+
+            IList<EmpleadoInteresEL> DataPrograma = objEmpleado.Consultar_EmpleadoInteres_PorCodigo(id_key);
+            Session["EmpleadoInteres"] = DataPrograma;
+            gvProgramas.DataSource = DataPrograma;
+            gvProgramas.DataBind();
+
+            IList<EmpleadoFormacionEL> DataFormacion = objEmpleado.Consultar_EmpleadoFormacion_PorCodigo(id_key);
+            Session["EmpleadoFormacion"] = DataFormacion;
+            gvFormacion.DataSource = DataFormacion;
+            gvFormacion.DataBind();
+
+
+            IList<EmpleadoExperienciaEL> DataExperiencia = objEmpleado.Consultar_ExperienciaInteres_PorCodigo(id_key);
+            Session["EmpleadoExperiencia"] = DataExperiencia;
+            gvExperiencia.DataSource = DataExperiencia;
+            gvExperiencia.DataBind();
+            // = new List<EmpleadoFamiliaEL>();
+            //Session["EmpleadoFormacion"] = new List<EmpleadoFormacionEL>();
+            //Session["EmpleadoIdioma"] = new List<EmpleadoIdiomaEL>();
+            //Session["EmpleadoInteres"] = new List<EmpleadoInteresEL>();
+            //Session["EmpleadoExperiencia"] = new List<EmpleadoExperienciaEL>();
+
+            MultiView1.ActiveViewIndex = 1;
+        }
+        else
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('No se encontro información del empleado','Error:','error');", true);
+            // success / info / warning / error
+        }
+    }
+    protected void gvMarcas_PreRender(object sender, EventArgs e)
+    {
+        if (gvMarcas.Rows.Count > 0)
+        {
+            gvMarcas.UseAccessibleHeader = true;
+            gvMarcas.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvMarcas.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvFormacion_PreRender(object sender, EventArgs e)
+    {
+        if (gvFormacion.Rows.Count > 0)
+        {
+            gvFormacion.UseAccessibleHeader = true;
+            gvFormacion.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvFormacion.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvFamiliares_PreRender(object sender, EventArgs e)
+    {
+        if (gvFamiliares.Rows.Count > 0)
+        {
+            gvFamiliares.UseAccessibleHeader = true;
+            gvFamiliares.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvFamiliares.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvIdioma_PreRender(object sender, EventArgs e)
+    {
+        if (gvIdioma.Rows.Count > 0)
+        {
+            gvIdioma.UseAccessibleHeader = true;
+            gvIdioma.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvIdioma.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvProgramas_PreRender(object sender, EventArgs e)
+    {
+        if (gvProgramas.Rows.Count > 0)
+        {
+            gvProgramas.UseAccessibleHeader = true;
+            gvProgramas.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvProgramas.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvExperiencia_PreRender(object sender, EventArgs e)
+    {
+        if (gvExperiencia.Rows.Count > 0)
+        {
+            gvExperiencia.UseAccessibleHeader = true;
+            gvExperiencia.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvExperiencia.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvDocumentos_PreRender(object sender, EventArgs e)
+    {
+        if (gvDocumentos.Rows.Count > 0)
+        {
+            gvDocumentos.UseAccessibleHeader = true;
+            gvDocumentos.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvDocumentos.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+    protected void gvCarpetaN1_PreRender(object sender, EventArgs e)
+    {
+        if (gvCarpetaN1.Rows.Count > 0)
+        {
+            gvCarpetaN1.UseAccessibleHeader = true;
+            gvCarpetaN1.HeaderRow.TableSection = TableRowSection.TableHeader;
+            gvCarpetaN1.FooterRow.TableSection = TableRowSection.TableFooter;
+        }
+    }
+ 
+    protected void btnExportar_Click(object sender, EventArgs e)
+    {
+
+        var GridView1 = new GridView();
+        GridView1.DataSource = objEmpleado.Consultar("");
+        GridView1.DataBind();
+
+        Response.Clear();
+        Response.Buffer = true;
+        Response.AddHeader("content-disposition", "attachment;filename=ReporteEmpleados_" + DateTime.Now.ToString("ddMMyyyy") + ".xls");
+        Response.Charset = "";
+        Response.ContentType = "application/vnd.ms-excel";
+        using (StringWriter sw = new StringWriter())
+        {
+            HtmlTextWriter hw = new HtmlTextWriter(sw);
+
+            //To Export all pages
+            GridView1.AllowPaging = false;
+            GridView1.HeaderRow.BackColor = Color.White;
+            foreach (TableCell cell in GridView1.HeaderRow.Cells)
+            {
+                cell.BackColor = GridView1.HeaderStyle.BackColor;
+            }
+            foreach (GridViewRow row in GridView1.Rows)
+            {
+                row.BackColor = Color.White;
+                foreach (TableCell cell in row.Cells)
+                {
+                    if (row.RowIndex % 2 == 0)
+                    {
+                        cell.BackColor = GridView1.AlternatingRowStyle.BackColor;
+                    }
+                    else
+                    {
+                        cell.BackColor = GridView1.RowStyle.BackColor;
+                    }
+                    cell.CssClass = "textmode";
+                }
+            }
+
+            GridView1.RenderControl(hw);
+
+            //style to format numbers to string
+            string style = @"<style> .textmode { mso-number-format:\@; } </style>";
+            Response.Write(style);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+        }
+    }
+    protected void ddlDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        cargarProvincia();
+    }
+    protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        cargarDistrito();
+    }
+    public void setTabs()
+    {       
+        li1.Attributes.Add("class", "first disabled");
+        li2.Attributes.Add("class", "disabled");
+        li3.Attributes.Add("class", "disabled");
+        li4.Attributes.Add("class", "disabled");
+        li5.Attributes.Add("class", "disabled");
+        li6.Attributes.Add("class", "last disabled"); 
+    }
+
+    protected void LinkButton4_Click(object sender, EventArgs e)
+    {
+        setTabs(); 
+        li1.Attributes.Add("class", "first current");
+        MultiView2.ActiveViewIndex = 0;
+    }
+
+    protected void LinkButton5_Click(object sender, EventArgs e)
+    {
+        setTabs();
+        li2.Attributes.Add("class", "current");
+        MultiView2.ActiveViewIndex = 1;
+    }
+
+    protected void LinkButton6_Click(object sender, EventArgs e)
+    {
+        setTabs();
+        li3.Attributes.Add("class", "current");
+        MultiView2.ActiveViewIndex = 2;
+    }
+
+    protected void LinkButton7_Click(object sender, EventArgs e)
+    {
+        setTabs();
+        li4.Attributes.Add("class", "current");
+        MultiView2.ActiveViewIndex =3;
+    }
+
+    protected void LinkButton8_Click(object sender, EventArgs e)
+    {
+        setTabs();
+        li5.Attributes.Add("class", "current");
+        MultiView2.ActiveViewIndex = 4;
+    }
+
+    protected void LinkButton9_Click(object sender, EventArgs e)
+    {
+        setTabs();
+        li6.Attributes.Add("class", "last current");
+        MultiView2.ActiveViewIndex = 5;
+    }
+
+    public void OcultarModals()
+    {
+        modalFamiliar.Visible = false;
+        modalFormacion.Visible = false;
+        modalIdioma.Visible = false;
+        modalInteres.Visible = false;
+        modalExperiencia.Visible = false;
+    }
+
+
+    #region "Familiar"
+
+    protected void LinkButton10_Click(object sender, EventArgs e)
+    {
+        LimpiarFormFamiliar();
+        OcultarModals();
+        modalFamiliar.Visible = true;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalFamiliar').modal('show');", true);
+    }
+
+    public void LimpiarFormFamiliar()
+    {
+        txtApellidoMaternoFamiliar.Text = "";
+        txtApellidoPaternoFamiliar.Text = "";
+        txtNombresFamiliar.Text = "";
+        txtFechaNacimientoFamiliar.Text = "";
+        txtLugarNacimientoFamiliar.Text = "";
+        txtTelefonoCasaFamiliar.Text = "";
+        txtTelefonoOficinaFamiliar.Text = "";
+        txtLugarTrabajoFamiliar.Text = "";
+        HFIDFamiliar.Value = "0";
+        ddlLlamarEmergenciaFamiliar.SelectedIndex = 2;
+        ddlParentesco.SelectedIndex = 0;
+    }
+
+    protected void btnGuardarFamiliar_Click(object sender, EventArgs e)
+    {
+
+        EmpleadoFamiliaEL Familiar = new EmpleadoFamiliaEL();
+        Familiar.id_key = gvFamiliares.Rows.Count;
+        Familiar.cod_id = 0;
+        Familiar.cod_ocupacion = "";
+        Familiar.opcional_ocupacion = "";
+        Familiar.cod_parentesco = ddlParentesco.SelectedValue;
+        Familiar.opcional_parentesco = ddlParentesco.SelectedItem.Text;
+        Familiar.telf_casa = txtTelefonoCasaFamiliar.Text;
+        Familiar.telf_of = txtTelefonoOficinaFamiliar.Text;
+        Familiar.fam_apellido_mat = txtApellidoMaternoFamiliar.Text;
+        Familiar.fam_apellido_pat = txtApellidoPaternoFamiliar.Text;
+        Familiar.fam_nombre = txtNombresFamiliar.Text;
+        Familiar.fch_nacimiento = Convert.ToDateTime(txtFechaNacimientoFamiliar.Text);
+        Familiar.lugar_nacimiento = txtLugarNacimientoFamiliar.Text;
+        Familiar.lugar_trabajo = txtLugarTrabajoFamiliar.Text;
+        Familiar.llamar_emergencia = ddlLlamarEmergenciaFamiliar.SelectedValue;
+        Familiar.opcional_llamar_emergencia = ddlLlamarEmergenciaFamiliar.SelectedItem.Text;
+
+        IList<EmpleadoFamiliaEL> DataFamiliar = (List<EmpleadoFamiliaEL>)Session["EmpleadoFamilia"];
+        DataFamiliar.Add(Familiar);
+
+        gvFamiliares.DataSource = DataFamiliar;
+        gvFamiliares.DataBind();
+
+        Session["EmpleadoFamilia"] = DataFamiliar;
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+    }
+
+    public IList<EmpleadoFamiliaEL> getDataFamilia()
+    {
+        IList<EmpleadoFamiliaEL> DataFamiliar = new List<EmpleadoFamiliaEL>();
+        int index= 0;
+        foreach(GridViewRow row in gvFamiliares.Rows)
+        {
+            EmpleadoFamiliaEL Familiar = new EmpleadoFamiliaEL();
+            Familiar.id_key = index;
+            Familiar.cod_id = Convert.ToInt32(row.Cells[1].Text.ToString().Trim());
+            Familiar.cod_parentesco = row.Cells[2].Text.ToString().Trim();
+            Familiar.opcional_parentesco = row.Cells[3].Text.ToString().Trim();
+            Familiar.fam_apellido_mat = row.Cells[4].Text.ToString().Trim();
+            Familiar.fam_apellido_pat = row.Cells[5].Text.ToString().Trim();
+            Familiar.fam_nombre = row.Cells[6].Text.ToString().Trim();
+            Familiar.fch_nacimiento = Convert.ToDateTime(row.Cells[7].Text.ToString().Trim());
+            Familiar.lugar_nacimiento = row.Cells[8].Text.ToString().Trim();
+            Familiar.cod_ocupacion = row.Cells[9].Text.ToString().Trim();
+            Familiar.opcional_ocupacion = row.Cells[10].Text.ToString().Trim();
+            Familiar.lugar_trabajo = row.Cells[11].Text.ToString().Trim();
+            Familiar.telf_of = row.Cells[12].Text.ToString().Trim();
+            Familiar.telf_casa = row.Cells[13].Text.ToString().Trim();
+            Familiar.llamar_emergencia = row.Cells[14].Text.ToString().Trim();
+            Familiar.opcional_llamar_emergencia = row.Cells[15].Text.ToString().Trim();
+            DataFamiliar.Add(Familiar);
+            index++;
+        }
+        return DataFamiliar;
+    }
+
+    protected void gvFamiliares_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        IList<EmpleadoFamiliaEL> DataFamiliar = (List<EmpleadoFamiliaEL>)Session["EmpleadoFamilia"];
+        DataFamiliar.RemoveAt(e.RowIndex);
+
+        gvFamiliares.DataSource = DataFamiliar;
+        gvFamiliares.DataBind();
+
+        Session["EmpleadoFamilia"] = DataFamiliar;
+    }
+
+    #endregion
+
+
+    #region "Formacion"
+
+    protected void btnAgregarFormacion_Click(object sender, EventArgs e)
+    {
+        LimpiarFormFormacion();
+        OcultarModals();
+        modalFormacion.Visible = true;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('div.modalFormacion').modal('show');", true);
+    }
+    public void LimpiarFormFormacion()
+    {
+        txtTitulo.Text = "";
+        txtCentroInstruccion.Text = "";
+        ddlAnnoIntruccionInicio.SelectedIndex = 0;
+        ddlAnnoIntruccionFin.SelectedIndex = 0;
+        HFIDFormacion.Value = "0";
+        ddlGradoFormacion.SelectedIndex = 0;
+    }    
+    protected void btnGuardarFormacion_Click(object sender, EventArgs e)
+    {
+
+        EmpleadoFormacionEL Familiar = new EmpleadoFormacionEL();
+        Familiar.id_key = gvFormacion.Rows.Count;
+        Familiar.cod_id = 0;
+        Familiar.anio_inicio  = ddlAnnoIntruccionInicio.SelectedValue;
+        Familiar.anio_fin = ddlAnnoIntruccionFin.SelectedValue;
+        Familiar.cod_grado_instruccion = ddlGradoFormacion.SelectedValue;        
+        Familiar.observaciones = "";
+        Familiar.opcional_instruccion = ddlGradoFormacion.SelectedItem.Text;
+        Familiar.opcional_institucion = txtCentroInstruccion.Text;
+        Familiar.titulo = txtTitulo.Text; 
+
+        IList<EmpleadoFormacionEL> DataFormacion = (List<EmpleadoFormacionEL>)Session["EmpleadoFormacion"];
+        DataFormacion.Add(Familiar);
+
+        gvFormacion.DataSource = DataFormacion;
+        gvFormacion.DataBind();
+
+        Session["EmpleadoFormacion"] = DataFormacion;
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+    }
+    protected void gvFormacion_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        IList<EmpleadoFormacionEL> DataFamiliar = (List<EmpleadoFormacionEL>)Session["EmpleadoFormacion"];
+        DataFamiliar.RemoveAt(e.RowIndex);
+
+        gvFormacion.DataSource = DataFamiliar;
+        gvFormacion.DataBind();
+
+        Session["EmpleadoFormacion"] = DataFamiliar;
+    }
+
+    #endregion
+
+
+    #region "Idioma"
+
+    protected void btnAgregarIdioma_Click(object sender, EventArgs e)
+    {
+        LimpiarFormIdioma();
+        OcultarModals();
+        modalIdioma.Visible = true;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalIdioma').modal('show');", true);
+    }
+    public void LimpiarFormIdioma()
+    {
+
+        ddlIdioma.SelectedIndex = 0;
+        ddlIdiomaNivel.SelectedIndex = 0;
+        ddlHabla.SelectedIndex = 0;
+        ddlLee.SelectedIndex = 0;
+        ddlEscribe.SelectedIndex = 0;
+        HFIDIdioma.Value = "0";
+        txtIdiomaInstruccion.Text = "";
+    }
+    protected void btnGuardarIdioma_Click(object sender, EventArgs e)
+    {
+
+        EmpleadoIdiomaEL Familiar = new EmpleadoIdiomaEL();
+        Familiar.id_key = gvFormacion.Rows.Count;
+        Familiar.cod_id = 0;
+        Familiar.cod_idioma = ddlIdioma.SelectedValue;
+        Familiar.opcional_idioma = ddlIdioma.SelectedItem.Text;
+        Familiar.cod_nivel = ddlIdiomaNivel.SelectedValue;
+        Familiar.opcional_nivel = ddlIdiomaNivel.SelectedItem.Text;
+        Familiar.institucion = txtIdiomaInstruccion.Text;
+        Familiar.n_habla = ddlHabla.SelectedValue;
+        Familiar.n_lee = ddlLee.SelectedValue;
+        Familiar.n_escritura = ddlEscribe.SelectedValue;
+
+        Familiar.opcional_habla = ddlHabla.SelectedItem.Text;
+        Familiar.opcional_lee = ddlLee.SelectedItem.Text;
+        Familiar.opcional_escritura = ddlEscribe.SelectedItem.Text;
+
+        IList<EmpleadoIdiomaEL> DataFormacion = (List<EmpleadoIdiomaEL>)Session["EmpleadoIdioma"];
+        DataFormacion.Add(Familiar);
+
+        gvIdioma.DataSource = DataFormacion;
+        gvIdioma.DataBind();
+
+        Session["EmpleadoIdioma"] = DataFormacion;
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+    }
+    protected void gvIdioma_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        IList<EmpleadoIdiomaEL> DataFamiliar = (List<EmpleadoIdiomaEL>)Session["EmpleadoIdioma"];
+        DataFamiliar.RemoveAt(e.RowIndex);
+
+        gvIdioma.DataSource = DataFamiliar;
+        gvIdioma.DataBind();
+
+        Session["EmpleadoIdioma"] = DataFamiliar;
+    }
+
+    #endregion
+
+
+    #region "Interes"
+
+    protected void btnAgregarCurso_Click(object sender, EventArgs e)
+    {
+        LimpiarFormInteres();
+        OcultarModals();
+        modalInteres.Visible = true;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalInteres').modal('show');", true);
+    }
+    public void LimpiarFormInteres()
+    {
+        ddlInteres.SelectedIndex = 0;
+        ddlNivelInteres.SelectedIndex = 0;
+        txtOtrosCurso.Text = ""; 
+        HFIDInteres.Value = "0"; 
+    }
+    protected void btnGuardarInteres_Click(object sender, EventArgs e)
+    {
+        EmpleadoInteresEL Familiar = new EmpleadoInteresEL();
+        Familiar.id_key = gvFormacion.Rows.Count;
+        Familiar.cod_id = 0;
+        Familiar.cod_interes = ddlInteres.SelectedValue;
+        Familiar.opcional_interes = ddlInteres.SelectedItem.Text;
+        Familiar.cod_nivel = ddlNivelInteres.SelectedValue;
+        Familiar.opcional_nivel = ddlNivelInteres.SelectedItem.Text;
+        Familiar.observacion = txtIdiomaInstruccion.Text;
+        Familiar.desc_interes = txtOtrosCurso.Text;
+
+        IList<EmpleadoInteresEL> DataFormacion = (List<EmpleadoInteresEL>)Session["EmpleadoInteres"];
+        DataFormacion.Add(Familiar);
+
+        gvProgramas.DataSource = DataFormacion;
+        gvProgramas.DataBind();
+
+        Session["EmpleadoInteres"] = DataFormacion;
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+    }
+    protected void gvProgramas_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        IList<EmpleadoInteresEL> DataFamiliar = (List<EmpleadoInteresEL>)Session["EmpleadoInteres"];
+        DataFamiliar.RemoveAt(e.RowIndex);
+
+        gvProgramas.DataSource = DataFamiliar;
+        gvProgramas.DataBind();
+
+        Session["EmpleadoInteres"] = DataFamiliar;
+    }
+
+    #endregion
+
+
+    #region "Experiencia"
+
+    protected void btnAgregarExperiencia_Click(object sender, EventArgs e)
+    {
+        LimpiarFormExperiencia();
+        OcultarModals();
+        modalExperiencia.Visible = true;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalExperiencia').modal('show');", true);
+    }
+    public void LimpiarFormExperiencia()
+    {
+        ddlExperienciaAnnoFin.SelectedIndex = 0;
+        ddlExperienciaAnnoInicio.SelectedIndex = 0;
+        ddlExperienciaMesFin.SelectedIndex = 0;
+        ddlExperienciaMesInicio.SelectedIndex = 0;
+        txtExperienciaEmpresa.Text = "";
+        txtExperienciaObservacion.Text = "";
+        txtExperienciaCargo.Text = "";
+        HFIDExperiencia.Value = "0";
+    }
+    protected void btnGuardarExperiencia_Click(object sender, EventArgs e)
+    {
+        EmpleadoExperienciaEL Familiar = new EmpleadoExperienciaEL();
+        Familiar.id_key = gvFormacion.Rows.Count;
+        Familiar.cod_id = 0;
+        Familiar.cod_cargo_laboral = "00";
+        Familiar.des_cargo_laboral = txtExperienciaCargo.Text;
+        Familiar.nom_empresa = txtExperienciaEmpresa.Text;
+        Familiar.ubicacion = "";
+        Familiar.anio_fin = ddlExperienciaAnnoFin.SelectedValue;
+        Familiar.mes_fin = ddlExperienciaMesFin.SelectedValue;
+
+        Familiar.mes_inicio = ddlExperienciaMesInicio.SelectedValue;
+        Familiar.anio_inicio = ddlExperienciaAnnoInicio.SelectedValue;
+
+
+        Familiar.observaciones = txtExperienciaObservacion.Text;
+        
+        //Session["EmpleadoExperiencia"] = new List<EmpleadoExperienciaEL>();
+
+        IList<EmpleadoExperienciaEL> DataFormacion = (List<EmpleadoExperienciaEL>)Session["EmpleadoExperiencia"];
+        DataFormacion.Add(Familiar);
+
+        gvExperiencia.DataSource = DataFormacion;
+        gvExperiencia.DataBind();
+
+        Session["EmpleadoExperiencia"] = DataFormacion;
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+    }
+    protected void gvExperiencia_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    {
+        IList<EmpleadoExperienciaEL> DataFamiliar = (List<EmpleadoExperienciaEL>)Session["EmpleadoExperiencia"];
+        DataFamiliar.RemoveAt(e.RowIndex);
+
+        gvExperiencia.DataSource = DataFamiliar;
+        gvExperiencia.DataBind();
+
+        Session["EmpleadoExperiencia"] = DataFamiliar;
+    }
+
+    #endregion
+
+
+    #region "Documento"
+
+    public void LimpiarFormArchivo()
+    {
+        txtNombreDocumento.Text = "";
+        ddlVigenciaDocumento.SelectedIndex = 1;
+        txtObservacionDocumento.Text = "";
+        txtFechaDesdeDocumento.Text = "";
+        txtFechaHastaDocumento.Text = "";
+        HFIDArchivo.Value = "0";
+        HFArchivoDocumento.Value = "";
+    }
+
+    protected void gvDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        int id_key = Convert.ToInt32(e.CommandArgument.ToString());
+        switch (e.CommandName.ToString())
+        {
+
+            case "editar":
+
+                //GridViewRow gvr = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+                //int RowIndex = gvr.RowIndex;
+                //int i = 0;
+                //foreach (GridViewRow row in gvCarpetaN1.Rows)
+                //{
+                //    row.CssClass = "";
+                //    if (i == RowIndex)
+                //    {
+                //        row.CssClass = "selected";
+                //        HFCarpetaFicha.Value = gvCarpetaN1.DataKeys[i].Value.ToString();
+                //    }
+                //    i++;
+                //}
+
+                List<EmpleadoDocumentoEL> DataFile = objEmpleado.Consultar_EmpleadoDocumento_PorCodigo(id_key);
+                if ( DataFile.Count()>0)
+                {
+
+                    LimpiarFormArchivo();
+                    txtNombreDocumento.Text = DataFile[0].Nombre;
+                    ddlVigenciaDocumento.SelectedIndex = (DataFile[0].TieneVigencia ? 0 : 1);
+                    txtObservacionDocumento.Text = DataFile[0].Observacion;
+                    txtFechaDesdeDocumento.Text = ( DataFile[0].opcional_FchInicioVigencia == "01/01/1900" ? "" : DataFile[0].opcional_FchInicioVigencia);
+                    txtFechaHastaDocumento.Text = (DataFile[0].opcional_FchFinVigencia == "01/01/1900" ? "" : DataFile[0].opcional_FchFinVigencia);   
+                    HFIDArchivo.Value = DataFile[0].id_key.ToString();
+                    HFArchivoDocumento.Value = DataFile[0].Archivo;
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalArchivo').modal('show');", true);
+
+                }
+
+
+                break;
+            case "eliminar":
+
+                List<TransaccionEL> tnx = objEmpleado.EliminarArchivo(id_key);
+                if (tnx[0].id_mensaje == 1)
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se elimino con éxito.','success');", true);
+                    cargarEmpleados();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JAlert('" + tnx[0].mensaje + "','Ocurrio un error','error');", true);
+                }
+                cargarDocumentos();
+                break;
+            case "documento":
+                break;
+        }
+    }
+
+    protected void gvCarpetaN1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        string id_key = Convert.ToString(e.CommandArgument);
+        switch (e.CommandName.ToString())
+        {
+
+            case "carpeta":
+
+                GridViewRow gvr = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+                
+
+                int RowIndex = gvr.RowIndex;
+                int i = 0;
+                foreach (GridViewRow row in gvCarpetaN1.Rows)
+                {
+                    GridView gvCarpetaN1_detalle = (GridView)row.FindControl("gvCarpetaN1_detalle");
+                    row.CssClass = "";
+                    if (i == RowIndex)
+                    {
+                       //row.CssClass = "selected";
+                        HFCarpetaFicha.Value = gvCarpetaN1.DataKeys[i].Value.ToString();
+                        gvCarpetaN1_detalle.Visible = true;
+ 
+                        foreach (GridViewRow row1 in gvCarpetaN1_detalle.Rows)
+                        {
+                            row1.CssClass = "";                            
+                        }
+                    }
+                    else
+                        gvCarpetaN1_detalle.Visible = false;
+                    i++;
+                }
+
+
+                HFCarpetaActiva.Value = id_key;
+                HFFichaActiva.Value = "01";
+                btnAgregarArchivo.Visible = false;
+                gvDocumentos.Visible = false;
+                break;
+            case "eliminar":
+                break;
+            case "documento":               
+                break;
+        }
+    }
+
+    protected void gvCarpetaN2_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+        string id_key = Convert.ToString(e.CommandArgument);
+        switch (e.CommandName.ToString())
+        {
+
+            case "documento":
+
+                GridViewRow gvr = (GridViewRow)(((LinkButton)e.CommandSource).NamingContainer);
+                int posCarpeta = Convert.ToInt32(HFCarpetaActiva.Value);
+                GridView  gv = (GridView)gvCarpetaN1.Rows[posCarpeta-1].FindControl("gvCarpetaN1_detalle");
+
+                int RowIndex = gvr.RowIndex;
+                 
+                int i = 0;
+                foreach (GridViewRow row in gv.Rows)
+                {
+                    row.CssClass = "";
+                    if (i == RowIndex)
+                        row.CssClass = "selected";
+                    i++;
+                }
+                HFFichaActiva.Value = id_key;
+                cargarDocumentos();
+                btnAgregarArchivo.Visible = true;
+                break;
+            case "eliminar":
+                break;
+           
+        }
+    }
+
+    protected void btnAgregarArchivo_Click(object sender, EventArgs e)
+    {
+        LimpiarFormArchivo();
+        ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "$('.modalArchivo').modal('show');", true);
+    }
+
+    
+    protected void btnBuscarEmpleadoDocumento_Click(object sender, EventArgs e)
+    {
+        DocumentoEmpleado(Convert.ToInt32(txtEmpleado_id.Text));
+    }
+
+    protected void btnGuardarArchivo_Click(object sender, EventArgs e)
+    {
+
+        EmpleadoDocumentoEL Documento = new EmpleadoDocumentoEL();
+        Documento.id_key = Convert.ToInt32(HFIDArchivo.Value);
+        Documento.IDPersonal = Convert.ToInt32(txtEmpleado_id.Text);
+        Documento.Estado = true;
+        Documento.Observacion = ddlAnnoIntruccionFin.SelectedValue;
+
+        Documento.TieneVigencia = (ddlVigenciaDocumento.SelectedIndex == 0 ? true : false);
+        Documento.FchActualizo = DateTime.Now;
+        Documento.FchRegistro = DateTime.Now;
+        Documento.FchInicioVigencia = Convert.ToDateTime("01/01/1900");
+        Documento.FchFinVigencia = Convert.ToDateTime("01/01/1900");
+        if (Documento.TieneVigencia)
+        {
+            Documento.FchInicioVigencia = Convert.ToDateTime(txtFechaDesdeDocumento.Text);
+            Documento.FchFinVigencia = Convert.ToDateTime(txtFechaHastaDocumento.Text);
+        }
+        Documento.TipoCarpeta = HFCarpetaActiva.Value;
+        Documento.TipoDocumento = HFFichaActiva.Value;
+        Documento.Archivo = HFArchivoDocumento.Value;
+        Documento.Observacion =  txtObservacionDocumento.Text;
+        Documento.Nombre = txtNombreDocumento.Text;
+        Documento.UserActualizo = User.Identity.Name;
+        Documento.UserRegistro = User.Identity.Name;
+        //IList<EmpleadoFormacionEL> DataFormacion = (List<EmpleadoFormacionEL>)Session["EmpleadoFormacion"];
+        //DataFormacion.Add(Familiar);
+        //gvFormacion.DataSource = DataFormacion;
+        //gvFormacion.DataBind();
+        //Session["EmpleadoFormacion"] = DataFormacion;
+        //ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+
+        string NomArchivo = "";
+        if (FUArchivoDocumento.HasFile)
+        {
+            string tempArchivo = Documento.TipoCarpeta + "_" + Documento.TipoDocumento + "_" + FUArchivoDocumento.PostedFile.FileName;
+            NomArchivo = tempArchivo;
+            FUArchivoDocumento.SaveAs(HFCarpetaCompartida.Value + "/" + HFCarpetaFicha.Value + "/" + tempArchivo);
+            Documento.Archivo = "/" + HFCarpetaFicha.Value + "/" + NomArchivo;
+        }
+
+
+        if (HFIDArchivo.Value == "0")
+        {
+            objEmpleado.RegistrarDocumento(Documento);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se agrego con éxito.','success');", true);
+        }
+        else
+        {
+            objEmpleado.ActualizarDocumento(Documento);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), DateTime.Now.ToString("ddMMyyyyHHmmss"), "JToastr('','Se actualizo con éxito.','success');", true);
+        }
+
+        cargarDocumentos();
+    }
+
+
+    public void cargarDocumentos()
+    {
+
+        int IDEmpleado = Convert.ToInt32(txtEmpleado_id.Text);
+        string Carpeta = HFCarpetaActiva.Value;
+        string Ficha = HFFichaActiva.Value;
+        string CarpetaEmpleado = "";
+        List<ItemEL> ConfigFileServer = objCatalogo.ListarItem("18");
+
+        if (ConfigFileServer.Count > 0)
+            CarpetaEmpleado = ConfigFileServer[0].valor1.Replace("~", "../..");
+
+        DataTable dataEmpleado = objEmpleado.Consultar_PorCodigo(IDEmpleado);
+
+
+        List<EmpleadoDocumentoEL> DataDocumentos = objEmpleado.Consultar_EmpleadoDocumento(IDEmpleado, Carpeta, Ficha);
+        foreach (EmpleadoDocumentoEL file in DataDocumentos)
+        {
+            file.Archivo = CarpetaEmpleado + dataEmpleado.Rows[0]["carpeta_compartida"].ToString() + file.Archivo;
+        }
+
+        gvDocumentos.DataSource = DataDocumentos;
+        gvDocumentos.DataBind();
+        gvDocumentos.Visible = true;
+    }
+
+    #endregion
+
+    protected void gvCarpetaN1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            string idCarpeta = ((Label)e.Row.FindControl("lblIDCarpeta")).Text;
+            GridView gvCarpetaN1_detalle = (GridView)e.Row.FindControl("gvCarpetaN1_detalle");
+            List<ItemEL> DataCarpetas = objCatalogo.ListarItem("19");
+            List<ItemEL> CarpetasN2 = DataCarpetas.Where(f => f.id_sub_catalogo == idCarpeta && f.id_tabla != "00").ToList();
+            foreach (ItemEL documento in CarpetasN2)
+            {
+                documento.valor2 = documento.valor1.Substring(0, 4).Trim();
+            }
+
+            gvCarpetaN1_detalle.DataSource = CarpetasN2;
+            gvCarpetaN1_detalle.DataBind();
+        }
+    }
+}

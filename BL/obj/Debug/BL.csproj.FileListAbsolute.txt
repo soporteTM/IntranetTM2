@@ -1,0 +1,297 @@
+D:\SysIntranet\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\SysIntranet\BL\bin\Debug\BL.dll
+D:\SysIntranet\BL\bin\Debug\BL.pdb
+D:\SysIntranet\BL\bin\Debug\DAL.dll
+D:\SysIntranet\BL\bin\Debug\EL.dll
+D:\SysIntranet\BL\bin\Debug\DAL.pdb
+D:\SysIntranet\BL\bin\Debug\EL.pdb
+D:\SysIntranet\BL\obj\Debug\BL.dll
+D:\SysIntranet\BL\obj\Debug\BL.pdb
+D:\SysIntranet v2\BL\bin\Debug\BL.dll
+D:\SysIntranet v2\BL\bin\Debug\BL.pdb
+D:\SysIntranet v2\BL\bin\Debug\DAL.dll
+D:\SysIntranet v2\BL\bin\Debug\EL.dll
+D:\SysIntranet v2\BL\bin\Debug\DAL.pdb
+D:\SysIntranet v2\BL\bin\Debug\EL.pdb
+D:\SysIntranet v2\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\SysIntranet v2\BL\obj\Debug\BL.dll
+D:\SysIntranet v2\BL\obj\Debug\BL.pdb
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\BL.dll
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\BL.pdb
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\EL.dll
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\EL.pdb
+D:\_Resources\GestionFlotaTM\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\_Resources\GestionFlotaTM\BL\obj\Debug\BL.dll
+D:\_Resources\GestionFlotaTM\BL\obj\Debug\BL.pdb
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\DAL.dll
+D:\_Resources\GestionFlotaTM\BL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\obj\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\BL\obj\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\obj\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\BL\obj\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\BL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\bin\Debug\EL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\BL\obj\Debug\BL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\BL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\BL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\EL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\bin\Debug\EL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\obj\Debug\BL.csprojAssemblyReference.cache
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\obj\Debug\BL.csproj.CopyComplete
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\obj\Debug\BL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\BL\obj\Debug\BL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+F:\GitHub\BL\bin\Debug\BL.dll
+F:\GitHub\BL\bin\Debug\BL.pdb
+F:\GitHub\BL\bin\Debug\DAL.dll
+F:\GitHub\BL\bin\Debug\EL.dll
+F:\GitHub\BL\bin\Debug\DAL.pdb
+F:\GitHub\BL\bin\Debug\EL.pdb
+F:\GitHub\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+F:\GitHub\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+F:\GitHub\BL\obj\Debug\BL.csproj.CopyComplete
+F:\GitHub\BL\obj\Debug\BL.dll
+F:\GitHub\BL\obj\Debug\BL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\BL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\BL\obj\Debug\BL.pdb
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\BL.dll
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\BL.pdb
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\DAL.dll
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\EL.dll
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\Intranet\BL\bin\Debug\EL.pdb
+F:\Rodrigo\Fuentes\Intranet\BL\obj\Debug\BL.dll
+F:\Rodrigo\Fuentes\Intranet\BL\obj\Debug\BL.pdb
+F:\Rodrigo\Fuentes\Intranet\BL\obj\Debug\BL.csprojAssemblyReference.cache
+F:\Rodrigo\Fuentes\Intranet\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+F:\Rodrigo\Fuentes\Intranet\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\BL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\BL.pdb
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\DAL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\EL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\DAL.pdb
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\bin\Debug\EL.pdb
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\obj\Debug\BL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\BL\obj\Debug\BL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\BL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\BL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\DAL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\EL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\bin\Debug\EL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\obj\Debug\BL.csprojAssemblyReference.cache
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\obj\Debug\BL.csproj.CopyComplete
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\obj\Debug\BL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\BL\obj\Debug\BL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\BL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\BL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\EL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\bin\Debug\EL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\BL\obj\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\BL\obj\Debug\BL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\BL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\BL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\EL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\bin\Debug\EL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\obj\Debug\BL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\BL\obj\Debug\BL.pdb
+D:\IntranetGit\BL\bin\Debug\BL.dll
+D:\IntranetGit\BL\bin\Debug\BL.pdb
+D:\IntranetGit\BL\bin\Debug\DAL.dll
+D:\IntranetGit\BL\bin\Debug\EL.dll
+D:\IntranetGit\BL\bin\Debug\DAL.pdb
+D:\IntranetGit\BL\bin\Debug\EL.pdb
+D:\IntranetGit\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\IntranetGit\BL\obj\Debug\BL.dll
+D:\IntranetGit\BL\obj\Debug\BL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\BL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\BL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\EL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\bin\Debug\EL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\obj\Debug\BL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\BL\obj\Debug\BL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\BL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\BL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\EL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\bin\Debug\EL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\obj\Debug\BL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\BL\obj\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\obj\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\BL\obj\Debug\BL.pdb
+D:\Fuentes\TM_Intranet\BL\bin\Debug\BL.dll
+D:\Fuentes\TM_Intranet\BL\bin\Debug\BL.pdb
+D:\Fuentes\TM_Intranet\BL\bin\Debug\DAL.dll
+D:\Fuentes\TM_Intranet\BL\bin\Debug\EL.dll
+D:\Fuentes\TM_Intranet\BL\bin\Debug\DAL.pdb
+D:\Fuentes\TM_Intranet\BL\bin\Debug\EL.pdb
+D:\Fuentes\TM_Intranet\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+D:\Fuentes\TM_Intranet\BL\obj\Debug\BL.dll
+D:\Fuentes\TM_Intranet\BL\obj\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\BL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\BL\obj\Debug\BL.pdb

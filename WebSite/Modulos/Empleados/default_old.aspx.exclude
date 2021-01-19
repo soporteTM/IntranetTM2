@@ -1,0 +1,1688 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Templete.master" AutoEventWireup="true" CodeFile="default_old.aspx.cs" Inherits="cliente_default" EnableEventValidation="False" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     
+    <style type="text/css">
+
+        .card-actions {
+            margin-top: -15px;
+        }
+        .md-form-group{
+            margin-bottom:0px !important;
+        }
+        .parsley-errors-list{
+            display:none !important;
+        }
+        .wizard.vertical > .steps{
+            width:100%;
+        }
+        .wizard > .steps .current a {
+            background:#2184be;
+        }
+        .wizard > .steps a {
+            text-align:left;
+            padding-left:60px;
+        }
+        .wizard > .steps a:hover {
+             text-align:left;
+            padding-left:60px;
+        }
+        .wizard > .steps .number {
+            left:3px;
+        }
+        .form-control {
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  padding: 6px 6px;
+  height: auto !important;
+  max-width: 100%;
+  font-size:12px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+        select.form-control {
+             padding: 6px 1px;
+        }
+         #mapa {
+        max-width: 900px;
+		height:350px;
+      }
+
+        tr.selected {
+            background-color:#337ab7 !important;
+            color:white;
+        }
+         tr.selected a{ 
+            color:white;
+        }
+         .modalArchivo .modal-dialog{
+             max-width:420px !important;
+         }
+         textarea.form-control{
+             min-height:40px;
+             resize:none;
+         }
+        .tooltipster-content {
+            color:#797979 !important;
+        }
+        .tooltipster-sidetip .tooltipster-box {
+            border:1px solid #ccc !important;
+            background-color:#f3f3f3 !important;
+        }
+        .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border, .tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+       border-top-color:#ccc !important;
+             }
+
+        .infoHTML table td{
+            padding:3px !important;
+        }
+
+        .noBorder{
+            padding:0px !important;
+            border:none !important;
+        }
+
+          .noBorder table{
+            margin:0px !important;
+            border:none;
+        }
+    </style>
+    <!--Form Wizard--> 
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyACUIWfOegSNoAekhfohSapVb4zVvqcWaA&libraries=places&region=pe&language=es"></script> 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+     <div class="row">
+							<div class="col-xs-12">
+								<div class="page-title-box">
+                                    <h4 class="page-title">Modulo de Empleados </h4>
+                                    <ol class="breadcrumb p-0 m-0">
+                                        <li>
+                                            <a href="#">Empleados</a>
+                                        </li> 
+                                        <li class="active">
+                                            Busqueda
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+							</div>
+						</div>
+
+
+ 
+
+
+
+
+
+      <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+
+        <asp:View ID="View1" runat="server">
+       
+                <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <div class="col-sm-6">
+                                    <h4 class="header-title"><b>Panel de Busqueda</b></h4>
+                                  <%--  <p class="text-muted font-13 m-b-30">
+                                       agregar descripción   </p>--%>
+                </div>
+
+                    <div class="panelOptions col-sm-6" style=" text-align:right;">         
+                  <asp:LinkButton ID="LinkButton1" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                            runat="server" onclick="btnNuevo_Click">
+                   <i class="fa fa-plus m-r-5"></i> <span> Agregar empleado</span>  </asp:LinkButton>
+
+                        
+                        
+                        <asp:LinkButton   ID="btnExportar" CssClass="btn btn-success  waves-effect waves-light m-b-5" 
+                            runat="server" onclick="btnExportar_Click"> 
+                            <i class="fa fa-file m-r-5"></i> <span>Exportar  </span> </asp:LinkButton>
+                   
+                   </div>    
+                   <div class="clearfix"></div>
+                    
+                     <asp:GridView ID="gvMarcas" runat="server" AutoGenerateColumns="False" 
+             CssClass="table table-striped table-bordered dataTable" GridLines="None"
+              onrowcommand="gvMarcas_RowCommand" onprerender="gvMarcas_PreRender">
+
+                <Columns>
+
+                    
+
+                    <asp:BoundField Visible="false" DataField="cod_id" HeaderText="Codigo" />
+                    <asp:BoundField DataField="apellido_pat" HeaderText="Ap. Paterno" />
+                    <asp:BoundField DataField="apellido_mat" HeaderText="Ap. Materno" />
+                    <asp:BoundField DataField="nombre_emp" HeaderText="Nombres" />
+                    <asp:BoundField DataField="tipo_documento" HeaderText="Tip. Documento" />
+                    <asp:BoundField DataField="nro_documento" HeaderText="Num. Documento" />                    
+                    <asp:BoundField DataField="nacionalidad" HeaderText="Nacionalidad" /> 
+                    <asp:TemplateField HeaderStyle-Width="20px">
+                        <ItemTemplate>
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ToolTip="Editar Empleado" CommandArgument='<%# Eval("cod_id") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                </td> 
+                                <td> 
+                                    <asp:LinkButton ToolTip="Eliminar Empleado"  OnClientClick="JConfirm('Debe estar seguro antes de eliminar información del sistema','¿Desea eliminar este empleado?',this); return false;" CommandArgument='<%# Eval("cod_id") %>' CommandName="eliminar" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                </td>
+                                <td>
+                                      <asp:LinkButton ToolTip="Ver documentación" CommandArgument='<%# Eval("cod_id") %>' CommandName="documento" CssClass="icon-list-demo" ID="LinkButton2Ver" runat="server"><i class="ti-folder" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    
+
+                </Columns>
+
+            </asp:GridView>
+              
+
+                      </div>
+                            </div>
+                        </div> 
+
+        </asp:View>
+
+        <asp:View ID="View2" runat="server">
+
+             <div class="row">
+
+                <%--<div class="col-md-12">
+                                <div class="card-box">
+                                   
+                                    <div class="row">
+                                     <div class="col-lg-9">   
+                                 <h4 class="header-title m-t-0 m-b-30">Registrar/Actualizar</h4>
+                                             </div>
+
+                                 <div class="col-lg-3">              
+                         <asp:Button ID="Button1" ValidationGroup="registrar"  
+                             onclick="Button1_Click" CssClass="btn btn-primary" runat="server" 
+                             Text="Guardar" />
+                        <asp:Button ID="Button2" OnClick="Button2_Click" CssClass="btn btn-default" runat="server" text="Regresar" UseSubmitBehavior="False" /> 
+                          <asp:HiddenField ID="HiddenField1" runat="server" Value="0" />
+                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                    <div class="tabs-vertical-env">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#v-home" data-toggle="tab" aria-expanded="true">Personales</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#v-profile" data-toggle="tab" aria-expanded="false">Familiares y Dependientes</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#v-messages" data-toggle="tab" aria-expanded="false">Formación y Estudios</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#v-settings" data-toggle="tab" aria-expanded="false">Experiencia</a>
+                                            </li>
+
+                                            <li class="">
+                                                <a href="#v-settings" data-toggle="tab" aria-expanded="false">Adicional</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="#v-settings" data-toggle="tab" aria-expanded="false">Uso para la Empresa</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="v-home">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                            </div>
+                                            <div class="tab-pane" id="v-profile">
+                                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                            </div>
+                                            <div class="tab-pane" id="v-messages">
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                            </div>
+                                            <div class="tab-pane" id="v-settings">
+                                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>--%>
+
+                <div class="col-xs-12">
+
+                    <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        
+                                         <div class="row">
+                                     <div class="col-lg-9">   
+                                         <h4 class="header-title">Registrar/Actualizar</h4>
+                                                    </div>
+
+                                         <div class="col-lg-3" style="text-align:right;">              
+                                 <asp:Button ID="btnGuardar" ValidationGroup="registrar"  
+                                     onclick="Button1_Click" CssClass="btn btn-primary" runat="server" 
+                                     Text="Guardar" />
+                                <asp:Button ID="btnRegresar" OnClick="Button2_Click" CssClass="btn btn-default " runat="server" text="Regresar" UseSubmitBehavior="False" /> 
+                                  <asp:HiddenField ID="HFCodigo" runat="server" Value="0" />
+                            </div>
+                                            <div class="clearfix"></div>
+                                </div>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        <div class="col-lg-3" style="padding:0px;">
+                                        <div class="wizard clearfix vertical">
+                                            <div class="steps clearfix">
+                                                <ul role="tablist">
+                                                    <li id="li1" runat="server" role="tab" class="first current"><asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click"><span class="number">1</span>Datos Personales</asp:LinkButton></li>
+                                                    <li id="li2" runat="server" role="tab" class="disabled"><asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click"><span class="number">2</span>Familiares y Dep.</asp:LinkButton></li>
+                                                    <li id="li3" runat="server" role="tab" class="disabled"><asp:LinkButton ID="LinkButton6" runat="server" OnClick="LinkButton6_Click"><span class="number">3</span>Formación y Estudios</asp:LinkButton></li>
+                                                    <li id="li4" runat="server" role="tab" class="disabled"><asp:LinkButton ID="LinkButton7" runat="server" OnClick="LinkButton7_Click"><span class="number">4</span>Exp. Profesional</asp:LinkButton></li>
+                                                    <li id="li5" runat="server" role="tab" class="disabled"><asp:LinkButton ID="LinkButton8" runat="server" OnClick="LinkButton8_Click"><span class="number">5</span>Info. Económica</asp:LinkButton></li>
+                                                    <li id="li6" runat="server" role="tab" class="disabled last"><asp:LinkButton ID="LinkButton9" runat="server" OnClick="LinkButton9_Click"><span class="number">6</span>Info. Adicional</asp:LinkButton></li>
+                                                </ul>
+                                                </div>
+                                        </div>
+                                        </div>
+
+                                        <div class="col-lg-9">
+                                            <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex="0">
+                                                <asp:View ID="View1a" runat="server">
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">                         
+                                                            <label for="userName">Apellido Paterno:</label>
+                                                            <asp:TextBox title="ingresar nombre" required CssClass="form-control" ID="txtNombres" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Apellido Materno:</label>                    
+                                                            <asp:TextBox required CssClass="form-control" ID="txtApellidoMaterno" runat="server" ></asp:TextBox>
+                                                        </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Nombres:</label>                      
+                                                            <asp:TextBox required CssClass="form-control" ID="txtApellidoPaterno" runat="server" ></asp:TextBox>
+                                                        </div>
+                                                          
+                                                            
+                                                            
+                                                            <div class="clearfix"></div>
+                                                        </div>                                                          
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                         <div class="col-lg-4">      
+                                                                <label class="md-control-label">Tipo Documento:</label>                     
+                                                                <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlTipoDocumento" runat="server">
+                                                                  </asp:DropDownList>
+                                                            </div>
+                                                         <div class="col-lg-4">                         
+                                                                <label for="userName">Nro. Documento :</label>
+                                                                <asp:TextBox title="ingresar nombre" required CssClass="form-control" ID="txtNumeroDocumento" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                         <div class="col-lg-4">      
+                                                                <label class="md-control-label">Fch. Nacimiento:</label>                     
+                                                                <asp:TextBox required  data-provide="datepicker" CssClass="form-control datepickers"  ID="txtFechaNacimiento" runat="server" ></asp:TextBox>     
+                                                            </div>
+                                                        <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+        
+                                                    <div class="form-group">
+                                                        <div class="row">                                                           
+                                                           <div class="col-lg-2">    
+                                                                 <label class="md-control-label">Sexo:</label>
+                                                                  <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlSexo" runat="server">
+                                                                  </asp:DropDownList>  
+                                                            </div>
+                                                           <div class="col-lg-2"> 
+                                                                <label class="md-control-label">Estado Civil:</label>                     
+                                                                <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlEstadoCivil" runat="server">
+                                                                  </asp:DropDownList>  
+                                                            </div>  
+                                                           <div class="col-lg-4">                         
+                                                                <label for="userName">Correo Personal:</label>
+                                                                <asp:TextBox title="ingresar nombre" required CssClass="form-control" ID="txtCorreo" runat="server" ></asp:TextBox>
+                                                            </div>  
+                                                            <div class="col-lg-4">                         
+                                                                <label for="userName">Teléfono Personal:</label>
+                                                                <asp:TextBox title="ingresar nombre" required CssClass="form-control" ID="txtTelefonoPersonal" runat="server" ></asp:TextBox>
+                                                            </div>                                                        
+                                                           <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">    
+                                                            <div class="col-lg-4">    
+                                                                 <label class="md-control-label">Pais:</label>
+                                                                  <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlPais" runat="server">
+                                                                  </asp:DropDownList>  
+                                                            </div>                                                        
+                                                            <div class="col-lg-4"> 
+                                                                <label class="md-control-label">Departamento:</label>                     
+                                                                <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlDepartamento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged">
+                                                                  </asp:DropDownList>  
+                                                            </div>
+                                                            <div class="col-lg-4">      
+                                                                <label class="md-control-label">Provincia:</label>                     
+                                                               <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged">
+                                                                  </asp:DropDownList>  
+                                                            </div>
+                                                            
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+                                        
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">    
+                                                                 <label class="md-control-label">Distrito:</label>
+                                                                  <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlDistrito" runat="server">
+                                                                  </asp:DropDownList>  
+                                                            </div>
+                                                            <div class="col-lg-6">      
+                                                                <label class="md-control-label">Dirección:</label>                     
+                                                                <asp:TextBox required CssClass="form-control"  ID="txtDireccion" runat="server" ></asp:TextBox>     
+                                                            </div>
+                                                             <div class="col-lg-2">      
+                                                                <label class="md-control-label">Ubicación:</label>                     
+                                                                <a href="javascript:openMapa('lima');" class="btn btn-success waves-effect m-b-5"> <i class="fa fa-map-marker m-r-5"></i> <span>Ver Mapa</span> </a>
+                                                            </div>
+
+                                                            
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">                         
+                                                                <label for="userName">Urbanización :</label>
+                                                                <asp:TextBox title="ingresar nombre" CssClass="form-control" ID="txtUrbanizacion" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <label>Nro.:</label>                    
+                                                                <asp:TextBox CssClass="form-control" ID="txtNumero" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <label>Interior:</label>                      
+                                                                <asp:TextBox CssClass="form-control" ID="txtInterior" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <label>Teléfono Domicilio:</label>                    
+                                                                <asp:TextBox CssClass="form-control" ID="txtTelefono" runat="server" ></asp:TextBox>
+                                                            </div>                                                           
+                                                              
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div> 
+
+                                                    <div class="form-group" id="panelMapa">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading">
+                                                                        <h3 class="panel-title">Google Maps</h3>
+                                                                        <p class="panel-sub-title font-13 text-muted">Úbica tu dirección en el mapa</p>
+                                                                    </div>
+                                                                    <div class="panel-body" style="position:relative;">
+                                                                        <asp:TextBox style="position:absolute;left: 25px;top: 28px;z-index: 1;right: 25px;width: 93%;" CssClass="form-control" ID="buscar_mapa" runat="server"></asp:TextBox>
+                                                                        <div style="display:none;">
+                                                                            <asp:TextBox CssClass="form-control" ID="lat" runat="server"></asp:TextBox>
+                                                                            <asp:TextBox CssClass="form-control" ID="lon" runat="server"></asp:TextBox>
+                                                                        </div>
+                                                                        <div id="mapa"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <script type="text/javascript"> 
+                                                      function openMapa(distrito) { 
+                                                          $("#panelMapa").slideToggle("slow");
+                                                          //google.maps.event.trigger(map, 'resize');
+                                                    }
+
+    
+                                                    $(document).ready(function () {
+
+                                                    var input_buscar_mapa = $("input[id*='buscar_mapa']").attr("id");
+                                                    var geocoder = new google.maps.Geocoder();
+                                                        var lat = ($("input[id*='lat']").val() == "" ? -12.0431800 : $("input[id*='lat']").val()),
+                                                        lng = ($("input[id*='lon']").val() == "" ? -77.0282400 : $("input[id*='lon']").val()),
+                                                        zoom = ($("input[id*='lon']").val() == "" ? 11 : 17),
+                                                        latlng = new google.maps.LatLng(lat, lng),
+                                                        image = '../../imagenes/Maps/map-marker.png';
+         
+                                                    var mapOptions = {           
+                                                            center: new google.maps.LatLng(lat, lng),           
+                                                            zoom: zoom,
+                                                            mapTypeId: google.maps.MapTypeId.ROADMAP         
+                                                        },
+                                                        map = new google.maps.Map(document.getElementById('mapa'), mapOptions),
+                                                        marker = new google.maps.Marker({
+			                                                draggable: true,
+			                                                animation: google.maps.Animation.DROP,
+                                                            position: latlng,
+                                                            map: map,
+                                                            icon: image
+                                                            });
+		 
+		                                                    marker.addListener('click', toggleBounce);
+		 
+		                                                    function toggleBounce() {
+		                                                    if (marker.getAnimation() !== null) {
+			                                                marker.setAnimation(null);
+		                                                    } else {
+			                                                marker.setAnimation(google.maps.Animation.BOUNCE);
+		                                                    }
+		                                                }
+                                                        
+		                                                 
+                                                    var input = document.getElementById(input_buscar_mapa);
+                                                    var autocomplete = new google.maps.places.Autocomplete(input, {
+                                                        types: ["geocode"],
+		                                                componentRestrictions: {country: "pe"}
+                                                    });          
+    
+                                                    autocomplete.bindTo('bounds', map); 
+                                                    var infowindow = new google.maps.InfoWindow(); 
+ 
+                                                    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                                                        infowindow.close(); 
+                                                        var place = autocomplete.getPlace();
+                                                        if (place.geometry.viewport) {
+                                                            map.fitBounds(place.geometry.viewport);
+			                                                //console.log(place.geometry);
+                                                        } else {
+                                                            map.setCenter(place.geometry.location);
+			                                                //console.log(place.geometry);
+                                                            map.setZoom(17);  
+                                                        }
+                                                        console.log(place.geometry.location);
+                                                        moveMarker(place.name, place.geometry.location);
+                                                        $("input[id*='lat']").val(place.geometry.location.lat());
+                                                        $("input[id*='lon']").val(place.geometry.location.lng());
+                                                    });  
+	
+	                                                google.maps.event.addListener(marker, 'dragend', function (event) {
+	                                                    $("input[id*='lat']").val(this.getPosition().lat());
+	                                                    $("input[id*='lon']").val(this.getPosition().lng()); 
+		                                                var latlng_dir = new google.maps.LatLng(this.getPosition().lat(),this.getPosition().lng());
+		                                                geocoder.geocode({latLng:latlng_dir},function(results,status){
+			                                                if(status==google.maps.GeocoderStatus.OK){
+				                                                if(results[0]){
+				                                                    $("input[id*='buscar_mapa']").val(results[0].formatted_address);
+				                                                }
+			                                                }
+		                                                });		
+	                                                });
+    
+	                                                $("input[id*='buscar_mapa']").focusin(function () {
+                                                        $(document).keypress(function (e) {
+                                                            if (e.which == 13) {
+                                                                infowindow.close();
+                                                                var firstResult = $(".pac-container .pac-item:first").text();
+                
+                                                                var geocoder = new google.maps.Geocoder();
+                                                                geocoder.geocode({"address":firstResult }, function(results, status) {
+                                                                    if (status == google.maps.GeocoderStatus.OK) {
+                                                                        var lat = results[0].geometry.location.lat(),
+                                                                            lng = results[0].geometry.location.lng(),
+                                                                            placeName = results[0].address_components[0].long_name,
+                                                                            latlng = new google.maps.LatLng(lat, lng);
+                        
+                                                                        moveMarker(placeName, latlng); 
+                                                                        $("input[id*='buscar_mapa']").val(firstResult);
+                                                                        $("input[id*='lat']").val(lat);
+                                                                        $("input[id*='lon']").val(lng);
+                                                                    }
+                                                                });
+                                                            }
+                                                        });
+                                                    });
+     
+                                                    function moveMarker(placeName, latlng){
+                                                        marker.setIcon(image);
+                                                        marker.setPosition(latlng);
+                                                        infowindow.setContent(placeName);
+                                                        infowindow.open(map, marker);
+                                                    }
+
+                                                    //$("#panelMapa").hide();
+                                                }); 
+                                                </script>
+                                                </asp:View>
+                                                <asp:View ID="View2a" runat="server">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="card-box table-responsive">
+                                                                <div class="col-sm-8">
+                                                                    <h4 class="header-title"><b>Información de Familiares y Dependientes</b></h4>
+                                                                </div>
+
+                                                                <div class="panelOptions col-sm-4" style=" text-align:right;">         
+                                                                  <asp:LinkButton ID="LinkButton10" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                                                                            runat="server" onclick="LinkButton10_Click">
+                                                                   <i class="fa fa-plus m-r-5"></i> <span> Agregar familiar</span>  </asp:LinkButton>
+                                                               </div>    
+                                                                <div class="clearfix"></div>
+                    
+                                                                 <asp:GridView ID="gvFamiliares" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dataTable" GridLines="None" onprerender="gvFamiliares_PreRender" OnRowDeleting="gvFamiliares_RowDeleting">
+
+                                                                    <Columns>
+                                                                        <asp:BoundField Visible="false" DataField="id_key" HeaderText="Key" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_id" HeaderText="cod_id" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_parentesco" HeaderText="IDParentesco" />
+                                                                        <asp:BoundField DataField="opcional_parentesco" HeaderText="Parentesco" />
+                                                                        <asp:BoundField DataField="fam_apellido_pat" HeaderText="Ap. Paterno" />
+                                                                        <asp:BoundField DataField="fam_apellido_mat" HeaderText="Ap. Materno" />
+                                                                        <asp:BoundField DataField="fam_nombre" HeaderText="Nombres" />
+                                                                        
+                                                                        <asp:BoundField Visible="false" DataField="fch_nacimiento" HeaderText="fch_nacimiento" /> 
+                                                                        <asp:BoundField Visible="false" DataField="lugar_nacimiento" HeaderText="lugar_nacimiento" /> 
+                                                                        <asp:BoundField Visible="false" DataField="cod_ocupacion" HeaderText="cod_ocupacion" /> 
+                                                                        <asp:BoundField Visible="false" DataField="opcional_ocupacion" HeaderText="ocupacion" />
+                                                                        <asp:BoundField Visible="false" DataField="lugar_trabajo" HeaderText="lugar_trabajo" /> 
+                                                                        <asp:BoundField Visible="false" DataField="telf_of" HeaderText="telf_of" /> 
+                                                                        <asp:BoundField Visible="false" DataField="telf_casa" HeaderText="telf_casa" /> 
+                                                                        <asp:BoundField Visible="false" DataField="llamar_emergencia" HeaderText="llamar_emergencia" /> 
+                                                                        <asp:BoundField DataField="opcional_llamar_emergencia" HeaderText="¿Llamar en emergencia?" /> 
+                                                                        <asp:TemplateField>
+                                                                            <ItemTemplate>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:LinkButton CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td> 
+                                                                                    <td> 
+                                                                                        <asp:LinkButton  OnClientClick="JConfirm('','¿Desea eliminar este familiar?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="Delete" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+
+                                                                </asp:GridView>
+              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="modalFamiliar" runat="server" tabindex="-1" role="dialog" class="modal fade modalFamiliar">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Familiar</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Apellido Paterno:</label>
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtApellidoPaternoFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                        <label>Apellido Materno:</label>                    
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtApellidoMaternoFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>                                                            
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                 <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                        <label>Nombres:</label>                      
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtNombresFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Parentesco:</label>
+                                                                        <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlParentesco" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Fch. Nacimiento:</label>
+                                                                        <asp:TextBox required data-provide="datepicker" CssClass="form-control datepickers" ID="txtFechaNacimientoFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                        <label>Lugar de Nacimiento:</label>                    
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtLugarNacimientoFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                        <label>Lugar de Trabajo:</label>                      
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtLugarTrabajoFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-3">                         
+                                                                        <label for="userName">Tel. Oficina:</label>
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtTelefonoOficinaFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                        <label>Tel. Casa:</label>                    
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtTelefonoCasaFamiliar" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div> 
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                        <label>¿Llamar en caso de emergencia?</label>                      
+                                                                        <asp:DropDownList required ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlLlamarEmergenciaFamiliar" runat="server">
+                                                                        </asp:DropDownList>  
+                                                                        </div>                                               
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div> 
+                                                                    
+
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDFamiliar" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarFamiliar" OnClick="btnGuardarFamiliar_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                </asp:View>
+                                                <asp:View ID="View3a" runat="server">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="card-box table-responsive">
+                                                                <div class="col-sm-8">
+                                                                    <h4 class="header-title"><b>Información de Formación Academica y Educación</b></h4>
+                                                                </div>
+
+                                                                <div class="panelOptions col-sm-4" style=" text-align:right;">         
+                                                                  <asp:LinkButton ID="btnAgregarFormacion" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                                                                            runat="server" onclick="btnAgregarFormacion_Click">
+                                                                   <i class="fa fa-plus m-r-5"></i> <span> Agregar formación</span>  </asp:LinkButton>
+                                                               </div>    
+                                                                <div class="clearfix"></div>
+                    
+                                                                 <asp:GridView ID="gvFormacion" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dataTable" GridLines="None" onprerender="gvFormacion_PreRender" OnRowDeleting="gvFormacion_RowDeleting">
+
+                                                                    <Columns>
+                                                                        <asp:BoundField Visible="false" DataField="id_key" HeaderText="Key" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_id" HeaderText="cod_id" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_grado_instruccion" HeaderText="cod_grado_instruccion" />
+                                                                        <asp:BoundField DataField="opcional_instruccion" HeaderText="Grado de Instrucción" />
+                                                                        <asp:BoundField DataField="institucion" HeaderText="Centro de Instrucción" />
+                                                                        <asp:BoundField DataField="titulo" HeaderText="Título" />
+                                                                        <asp:BoundField DataField="anio_inicio" HeaderText="Inicio" /> 
+                                                                        <asp:BoundField DataField="anio_fin" HeaderText="Termino" /> 
+                                                                        <asp:TemplateField>
+                                                                            <ItemTemplate>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:LinkButton CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td> 
+                                                                                    <td> 
+                                                                                        <asp:LinkButton  OnClientClick="JConfirm('','¿Desea eliminar esta formación?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="Delete" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+
+                                                                </asp:GridView>              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="card-box table-responsive">
+                                                                <div class="col-sm-8">
+                                                                    <h4 class="header-title"><b>Información de Idiomas</b></h4>
+                                                                </div>
+
+                                                                <div class="panelOptions col-sm-4" style=" text-align:right;">         
+                                                                  <asp:LinkButton ID="btnAgregarIdioma" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                                                                            runat="server" OnClick="btnAgregarIdioma_Click">
+                                                                   <i class="fa fa-plus m-r-5"></i> <span> Agregar idioma</span>  </asp:LinkButton>
+                                                               </div>    
+                                                                <div class="clearfix"></div>
+                    
+                                                                 <asp:GridView ID="gvIdioma" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dataTable" GridLines="None" onprerender="gvIdioma_PreRender" OnRowDeleting="gvIdioma_RowDeleting">
+
+                                                                    <Columns>
+                                                                        <asp:BoundField Visible="false" DataField="id_key" HeaderText="Key" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_id" HeaderText="cod_id" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_idioma" HeaderText="IDIdioma" />
+                                                                        <asp:BoundField DataField="opcional_idioma" HeaderText="Idioma" />
+                                                                        <asp:BoundField DataField="opcional_nivel" HeaderText="Nivel" />
+                                                                        <asp:BoundField DataField="opcional_habla" HeaderText="Habla" />
+                                                                        <asp:BoundField DataField="opcional_lee" HeaderText="Lee" />
+                                                                        <asp:BoundField DataField="opcional_escritura" HeaderText="Escritura" /> 
+                                                                        <asp:TemplateField>
+                                                                            <ItemTemplate>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:LinkButton CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td> 
+                                                                                    <td> 
+                                                                                        <asp:LinkButton  OnClientClick="JConfirm('','¿Desea eliminar este idioma?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="Delete" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+
+                                                                </asp:GridView>
+              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="card-box table-responsive">
+                                                                <div class="col-sm-8">
+                                                                    <h4 class="header-title"><b>Información de Cursos/Programas</b></h4>
+                                                                </div>
+
+                                                                <div class="panelOptions col-sm-4" style=" text-align:right;">         
+                                                                  <asp:LinkButton ID="btnAgregarCurso" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                                                                       OnClick="btnAgregarCurso_Click"    runat="server">
+                                                                   <i class="fa fa-plus m-r-5"></i> <span> Agregar curso/programa</span>  </asp:LinkButton>
+                                                               </div>    
+                                                                <div class="clearfix"></div>
+                    
+                                                                 <asp:GridView ID="gvProgramas" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dataTable" GridLines="None" onprerender="gvProgramas_PreRender" OnRowDeleting="gvProgramas_RowDeleting">
+
+                                                                    <Columns>
+                                                                        <asp:BoundField Visible="false" DataField="id_key" HeaderText="Key" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_id" HeaderText="cod_id" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_interes" HeaderText="cod_interes" />
+                                                                        <asp:BoundField DataField="opcional_interes" HeaderText="Curso/Programa" />
+                                                                        <asp:BoundField DataField="opcional_nivel" HeaderText="Nivel" /> 
+
+                                                                        <asp:TemplateField>
+                                                                            <ItemTemplate>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:LinkButton CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td> 
+                                                                                    <td> 
+                                                                                        <asp:LinkButton  OnClientClick="JConfirm('','¿Desea eliminar este curso/programa?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="Delete" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+
+                                                                </asp:GridView>
+              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="modalFormacion" runat="server" tabindex="-1" role="dialog" class="modal fade modalFormacion">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Formación Academica y Educación</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Grado de Instrucción:</label>
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlGradoFormacion" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-6">
+                                                                        <label>Centro de Instrucción:</label>                    
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtCentroInstruccion" runat="server" ></asp:TextBox>
+                                                                        </div>                                                            
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                 <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                        <label>Título:</label>                      
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtTitulo" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                         
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label>Año de Inicio:</label>
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlAnnoIntruccionInicio" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                        <label>Año de Termino:</label>                    
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlAnnoIntruccionFin" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDFormacion" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarFormacion" OnClick="btnGuardarFormacion_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <div id="modalIdioma" runat="server" tabindex="-1" role="dialog" class="modal fade modalIdioma">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Idioma</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Idioma:</label>
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlIdioma" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-6">
+                                                                        <label>Nivel:</label>                    
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlIdiomaNivel" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>                                                            
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>                                                                  
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                        <label>Centro de Instrucción:</label>                      
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtIdiomaInstruccion" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-2">                         
+                                                                        <label>Habla:</label>
+                                                                        <asp:DropDownList required CssClass="form-control" ID="ddlHabla" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                        <label>Lee:</label>                    
+                                                                        <asp:DropDownList required CssClass="form-control" ID="ddlLee" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                          <div class="col-lg-2">
+                                                                        <label>Escribe:</label>                    
+                                                                        <asp:DropDownList required CssClass="form-control" ID="ddlEscribe" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>                                                           
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+                                                            
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDIdioma" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarIdioma" OnClick="btnGuardarIdioma_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <div id="modalInteres" runat="server" tabindex="-1" role="dialog" class="modal fade modalInteres">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Interes</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Curso/Programa:</label>
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlInteres" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        
+                                                                        <div class="col-lg-6">
+                                                                        <label>Nivel:</label>                    
+                                                                        <asp:DropDownList ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlNivelInteres" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>                                                            
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                        <label>Especificar curso/programa en caso otros:</label>                      
+                                                                        <asp:TextBox CssClass="form-control" ID="txtOtrosCurso" runat="server" ></asp:TextBox>
+                                                                        </div>                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+                                                            
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDInteres" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarInteres" OnClick="btnGuardarInteres_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                </asp:View>
+                                                <asp:View ID="View4a" runat="server">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="card-box table-responsive">
+                                                                <div class="col-sm-8">
+                                                                    <h4 class="header-title"><b>Información de Experiencia Profesional</b></h4>
+                                                                </div>
+
+                                                                <div class="panelOptions col-sm-4" style=" text-align:right;">         
+                                                                  <asp:LinkButton ID="btnAgregarExperiencia" CssClass="btn btn-default waves-effect waves-light m-b-5" 
+                                                                            runat="server" onclick="btnAgregarExperiencia_Click">
+                                                                   <i class="fa fa-plus m-r-5"></i> <span> Agregar experiencia</span>  </asp:LinkButton>
+                                                               </div>    
+                                                                <div class="clearfix"></div>
+                    
+                                                                 <asp:GridView ID="gvExperiencia" runat="server" AutoGenerateColumns="False" CssClass="table table-striped table-bordered dataTable" GridLines="None" onprerender="gvExperiencia_PreRender" OnRowDeleting="gvExperiencia_RowDeleting">
+
+                                                                    <Columns>
+                                                                        <asp:BoundField Visible="false" DataField="id_key" HeaderText="Key" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_id" HeaderText="cod_id" />
+                                                                        <asp:BoundField Visible="false" DataField="cod_cargo_laboral" HeaderText="cod_cargo_laboral" />
+                                                                        <asp:BoundField DataField="nom_empresa" HeaderText="Empresa" />
+                                                                        <asp:BoundField DataField="des_cargo_laboral" HeaderText="Cargo" />
+                                                                        <asp:BoundField DataField="mes_inicio" HeaderText="Desde" />
+                                                                        <asp:BoundField DataField="anio_inicio" HeaderText="" />
+
+                                                                        <asp:BoundField DataField="mes_fin" HeaderText="Hasta" />
+                                                                        <asp:BoundField DataField="anio_fin" HeaderText="" />
+                                                                        
+                                                                        <asp:TemplateField>
+                                                                            <ItemTemplate>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <asp:LinkButton CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td> 
+                                                                                    <td> 
+                                                                                        <asp:LinkButton  OnClientClick="JConfirm('','¿Desea eliminar esta experiencia?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="Delete" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px;"></i></asp:LinkButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+
+                                                                </asp:GridView>
+              
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="modalExperiencia" runat="server" tabindex="-1" role="dialog" class="modal fade modalExperiencia">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Experiencia</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Empresa:</label>
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtExperienciaEmpresa" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                        <label>Cargo:</label>                    
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtExperienciaCargo" runat="server" ></asp:TextBox>
+                                                                        </div>                                                            
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+ 
+                                                                        <div class="col-lg-3">                         
+                                                                        <label for="userName">Desde (Mes):</label>
+                                                                        <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlExperienciaMesInicio" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        <div class="col-lg-3">                         
+                                                                        <label for="userName">Desde (Año):</label>
+                                                                        <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlExperienciaAnnoInicio" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+
+                                                                        <div class="col-lg-3">                         
+                                                                        <label for="userName">Hasta (Mes):</label>
+                                                                        <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlExperienciaMesFin" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+
+                                                                        <div class="col-lg-3">                         
+                                                                        <label for="userName">Hasta (Año):</label>
+                                                                        <asp:DropDownList  ToolTip="Seleccionar tipo" required CssClass="form-control" ID="ddlExperienciaAnnoFin" runat="server">
+                                                                        </asp:DropDownList> 
+                                                                        </div>
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>                                                                 
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                        <label>Observación:</label>                      
+                                                                        <asp:TextBox CssClass="form-control" ID="txtExperienciaObservacion" runat="server" Rows="2" TextMode="MultiLine" ></asp:TextBox>
+                                                                        </div>
+ 
+                                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div> 
+                                                            
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDExperiencia" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarExperiencia" OnClick="btnGuardarExperiencia_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                </asp:View>
+                                                <asp:View ID="View5a" runat="server">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">                         
+                                                            <label for="userName">Ingreso Económico adicional:</label>
+                                                            <asp:TextBox CssClass="form-control money" ID="txtIngresoEconomicoAdicional" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Valor total de activos:</label>                    
+                                                            <asp:TextBox CssClass="form-control money" ID="txtValorActivos" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Tipo Vivienda:</label>                      
+                                                            <asp:TextBox CssClass="form-control" ID="txtTipoVivienda" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>                                                          
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <label>Tipo de Licencia:</label>                                                                                  
+                                                            <asp:TextBox CssClass="form-control" ID="txtTipoLicencia" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Num. Licencia:</label>                      
+                                                            <asp:TextBox CssClass="form-control" ID="txtNumLicencia" runat="server" ></asp:TextBox>
+                                                        </div> 
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <label>Vehículo Marca:</label>                                                                                  
+                                                            <asp:TextBox CssClass="form-control" ID="txtVehiculoMarca" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Vehículo Modelo:</label>                      
+                                                            <asp:TextBox CssClass="form-control" ID="txtVehiculoModelo" runat="server" ></asp:TextBox>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Vehículo Placa:</label>                      
+                                                            <asp:TextBox CssClass="form-control" ID="txtVehiculoPlaca" runat="server" ></asp:TextBox>
+                                                        </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <label>Posee Cta. Bancaria:</label>                                                                                  
+                                                             <asp:DropDownList  ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlPoseeCtaBanco" runat="server">
+                                                            </asp:DropDownList>
+                                                            </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Banco Emisor:</label>                      
+                                                            <asp:DropDownList  ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlBancoCta" runat="server">
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Posee Tarjeta Crédito:</label>                    
+                                                            <asp:DropDownList  ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlPoseTarjBanco" runat="server">
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <label>Banco Emisor:</label>                    
+                                                            <asp:DropDownList  ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlBancoTarj" runat="server">
+                                                            </asp:DropDownList>
+                                                        </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Otros biene muebles e inmuebles, decriba:</label>                                                                                 
+                                                            <asp:TextBox CssClass="form-control" ID="txtOtrosMueblesInmuebles" TextMode="MultiLine" Rows="4" runat="server" ></asp:TextBox>                                                                  
+                                                            </div>                                                        
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+
+
+                                                </asp:View>
+                                                <asp:View ID="View6a" runat="server">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-lg-4">                         
+                                                            <label for="userName">Código I.P.S.S.:</label>
+                                                            <asp:TextBox title="ingresar nombre" CssClass="form-control" ID="txtCodigoIPSS" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Nombre AFP:</label>                    
+                                                            <asp:TextBox CssClass="form-control" ID="txtNombreAFP" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                            <label>Código:</label>                      
+                                                            <asp:TextBox CssClass="form-control" ID="txtCodigoAFP" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>                                                          
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <label>Fecha Inscripción:</label>                                                                                  
+                                                            <asp:TextBox data-provide="datepicker" CssClass="form-control datepickers" ID="txtFechaInscripcion" runat="server" ></asp:TextBox>
+                                                            </div>
+                                                        <div class="col-lg-4">
+                                                            <label>Discapacitado:</label>                      
+                                                            <asp:DropDownList  ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlDiscapacitado" runat="server">
+                                                            </asp:DropDownList>  
+                                                        </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <label>Salud e Indicaciones Médicas:</label>                                                                                 
+                                                            <asp:TextBox CssClass="form-control" ID="txtIndicacionesMedicas" TextMode="MultiLine" Rows="4" runat="server" ></asp:TextBox>
+                                                            <p style="font-size:11px;">Indicar condiciones médicas de riesgo y por favor dar todas las indicaciones a tomar en cuenta para cualquier situación de emergencia:</p>     
+                                                            </div>                                                        
+                                                            <div class="clearfix"></div>
+                                                        </div>  
+                                                    </div>
+                                                </asp:View>
+                                            </asp:MultiView>
+
+
+                                        </div>
+                                    
+
+
+                                         
+
+                                        
+
+                                    </div>
+                                </div>
+
+                     
+                </div>
+          
+              </div>
+
+        
+ 
+        </asp:View>
+
+        <asp:View ID="View3" runat="server">
+
+            <div class="row">
+                 <div class="col-xs-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                        <div class="row">
+                                        <div class="col-lg-8">   
+                                            <div class="header-title">
+                                             
+                                             <table width="100%" border="0">
+                                                 <tr>
+                                                     <td style="width:100px;">Documentación</td>
+                                                     <td style="width:15px; text-align:center;">/</td>
+                                                     <td style="width:80px;">Empleado</td>
+                                                     <td>
+                                                        <asp:TextBox placeholder="Ingresar nombre del personal" CssClass="form-control autocomplete" data-url="BuscarEmpleados.ashx"   ID="txtEmpleado" runat="server" ></asp:TextBox>
+                                                        <asp:TextBox ID="txtEmpleado_id" runat="server" class="form-control" style="color: #CCC; background: transparent; z-index: 1;display: none;"></asp:TextBox>           
+                                                        <%--                                                            <label class="">Activo:</label>
+                                                            <div class="checkbox checkbox-primary">
+                         <asp:CheckBox ID="chkActivo" runat="server" />  
+                       <label for="chkActivo">
+	                                                            Check me out !
+	                                                        </label>
+                      </div>--%>
+                                                     </td>
+                                                 </tr>
+                                             </table>                                           
+
+
+                                            </div>
+                                            </div>
+
+                                         <div class="col-lg-4" style="text-align:right;">              
+                               <asp:Button ID="btnBuscarEmpleadoDocumento" CssClass="btn btn-primary " runat="server" text="Buscar" UseSubmitBehavior="False" OnClick="btnBuscarEmpleadoDocumento_Click" /> 
+                                <asp:Button ID="btnRegresarDocumento" OnClick="btnRegresarDocumento_Click" CssClass="btn btn-default " runat="server" text="Regresar" UseSubmitBehavior="False" /> 
+                                  <asp:HiddenField ID="HFEmpleadoDocumento" runat="server" Value="0" />
+                            </div>
+                                            <div class="clearfix"></div>
+                                </div>
+
+                                         </div>
+                        <div class="panel-body">
+
+                            <div class="col-lg-6">       
+                                <div class="table-responsive"> 
+                    
+                                <asp:GridView ID="gvCarpetaN1" runat="server" AutoGenerateColumns="False" 
+             CssClass="table table-striped table-bordered" GridLines="None" DataKeyNames="valor1"
+              onrowcommand="gvCarpetaN1_RowCommand" onprerender="gvCarpetaN1_PreRender" OnRowDataBound="gvCarpetaN1_RowDataBound">
+
+                <Columns>
+  
+
+                    <asp:TemplateField HeaderText="Carpetas" ItemStyle-CssClass="noBorder">
+                         <ItemTemplate> 
+
+                             <table class="table table-striped table-bordered">
+                                 <thead> 
+                                     <td><%# Eval("valor2") %> <%# Eval("descripcion") %></td>
+                                     <td style="width:31px;"><asp:LinkButton CommandArgument='<%# Eval("id_sub_catalogo") %>' CommandName="carpeta" ToolTip="Ver fichas" ID="LinkButton12a" runat="server"><i class="ti-folder" style="width:16px; height:16px; line-height:16px; font-size:16px;"></i></asp:LinkButton></td>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td colspan="2" style="padding:0px;">
+                                             <asp:Label ID="lblIDCarpeta" style="display:none;" runat="server" Text='<%# Eval("id_sub_catalogo") %>'></asp:Label>
+                                             <asp:GridView style="margin:0px !important;" ID="gvCarpetaN1_detalle" runat="server" AutoGenerateColumns="False" 
+             CssClass="table table-striped table-bordered" GridLines="None"
+              onrowcommand="gvCarpetaN2_RowCommand">
+
+                <Columns>
+
+                   
+
+                    <asp:BoundField Visible="false" DataField="id_descripcion" HeaderText="Codigo" />
+                    
+                    <asp:BoundField DataField="valor2" HeaderText="N°" HeaderStyle-Width="20px"/>
+                    <asp:BoundField DataField="descripcion" HeaderText="Fichas" />
+                    <asp:BoundField DataField="valor1" HeaderText="Fichas" Visible="false"/> 
+                      <asp:TemplateField HeaderStyle-Width="10px">
+                        <ItemTemplate> 
+                             <asp:LinkButton CommandArgument='<%# Eval("id_tabla") %>' CommandName="documento" ToolTip="Ver documentos" ID="LinkButton12" runat="server"><i class="ti-files" style="width:16px; height:16px; line-height:16px; font-size:16px;"></i></asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+
+            </asp:GridView>
+                                         </td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+
+                             
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                </Columns>
+
+            </asp:GridView>              
+
+                                </div>
+                            </div>                              
+
+                            <div class="col-lg-6" id="panelDocumentos" runat="server">             
+                                <div class="table-responsive"> 
+                    
+                                <asp:GridView ID="gvDocumentos" runat="server" AutoGenerateColumns="False" 
+             CssClass="table table-striped table-bordered" GridLines="None" EmptyDataText="No se encontraron archivos"
+              onrowcommand="gvDocumentos_RowCommand" onprerender="gvDocumentos_PreRender">
+
+                <Columns>
+
+                     
+
+                    <asp:BoundField Visible="false" DataField="IDDocumento" HeaderText="Codigo" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Documento" />
+                    <asp:BoundField DataField="opcional_TieneVigencia" Visible="false" HeaderText="¿Tiene Vigencia?" HeaderStyle-Width="50px" />
+
+ 
+ 
+
+                    <asp:TemplateField HeaderStyle-Width="10px"  >
+                        <ItemTemplate> 
+                        
+                            
+                             <table>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ToolTip="Editar Documento" CommandArgument='<%# Eval("id_key") %>' CommandName="editar" CssClass="icon-list-demo" ID="LinkButton2" runat="server"><i class="ti-pencil-alt" style="width:18px; height:18px; line-height:18px; font-size:18px; margin-right:8px;"></i></asp:LinkButton>
+                                </td> 
+                                <td> 
+                                    <asp:LinkButton ToolTip="Eliminar Documento"  OnClientClick="JConfirm('Debe estar seguro antes de eliminar información del sistema','¿Desea eliminar este documento?',this); return false;" CommandArgument='<%# Eval("id_key") %>' CommandName="eliminar" CssClass="icon-list-demo" ID="LinkButton3" runat="server"><i class="ti-trash" style="width:18px; height:18px; line-height:18px; font-size:18px; margin-right:8px;"></i></asp:LinkButton>
+                                </td>
+                                <td>
+                                     <%-- <asp:LinkButton ToolTip="Ver Documento" CommandArgument='<%# Eval("id_key") %>' CommandName="info" CssClass="icon-list-demo tooltip_html" ID="LinkButton2Ver" runat="server"><i class="ti-info" style="width:18px; height:18px; line-height:18px; font-size:18px; margin-right:8px;"></i></asp:LinkButton>
+                                     --%>
+                                    <a title="Ver Documento" style="cursor:pointer;" class="icon-list-demo tooltip_html"><i class="ti-info" style="width:18px; height:18px; line-height:18px; font-size:18px; margin-right:8px;"></i></a>
+                                     <div class="infoHTML" style="display:none;">
+                                          <table border="0" width="100%">
+                                              <tr>
+                                                  <td>Nombre:</td>
+                                                  <td><%# Eval("Nombre") %></td>
+                                              </tr>
+                                               <tr>
+                                                  <td style="padding-right:10px;">¿Tiene Vigencia?</td>
+                                                  <td><%# Eval("opcional_TieneVigencia") %></td>
+                                              </tr>
+                                               <tr>
+                                                  <td>Desde:</td>
+                                                  <td><%# Eval("opcional_FchInicioVigencia") %></td>
+                                              </tr>
+                                               <tr>
+                                                  <td>Hasta:</td>
+                                                  <td><%# Eval("opcional_FchFinVigencia") %></td>
+                                              </tr>
+                                               <tr>
+                                                  <td>Archivo:</td>
+                                                  <td><a target="_blank" href='<%# Eval("Archivo") %>'>Descargar</a></td>
+                                              </tr>
+                                          </table>
+
+                                      </div>
+                                
+                                </td>
+                            </tr>
+                        </table>
+                              
+                        
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                     
+                </Columns>
+
+            </asp:GridView>              
+            <asp:LinkButton  ID="btnAgregarArchivo" CssClass="btn btn-default waves-effect waves-light btn-sm" runat="server" OnClick="btnAgregarArchivo_Click"><i class="fa fa-plus m-r-5"></i> <span> Agregar archivo</span>  </asp:LinkButton>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                            
+                </div>
+            </div>
+
+            <asp:HiddenField ID="HFCarpetaActiva" runat="server" />
+            <asp:HiddenField ID="HFFichaActiva" runat="server" />
+            <asp:HiddenField ID="HFCarpetaFicha" runat="server" />
+            <asp:HiddenField ID="HFCarpetaCompartida" runat="server" />
+
+            <div id="modalArchivo" runat="server" tabindex="-1" role="dialog" class="modal fade modalArchivo">
+                                                      <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">
+                                                              <span aria-hidden="true">×</span>
+                                                              <span class="sr-only">Close</span>
+                                                            </button>
+
+                                                                <h4 class="modal-title">Información de Documento</h4>
+
+                                                          </div>
+                                                          <div class="modal-body">
+                                                              <span class="text-primary icon icon-info-circle icon-5x"></span>
+                      
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">                         
+                                                                        <label for="userName">Nombre:</label>
+                                                                        <asp:TextBox required CssClass="form-control" ID="txtNombreDocumento" runat="server" ></asp:TextBox>
+                                                                        </div>                                                                                                                               
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                 <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                        <label>Archivo:</label>                      
+                                                                        <asp:FileUpload CssClass="form-control" ID="FUArchivoDocumento" runat="server" accept=".png, .jpg, .jpeg, .pdf, .doc, .docx" />
+                                                                            <asp:HiddenField ID="HFArchivoDocumento" runat="server" />  
+                                                                              </div>                                                                      
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                          <label>¿Tiene Vigencia?:</label>                      
+                                                                        <asp:DropDownList required ToolTip="Seleccionar tipo" CssClass="form-control" ID="ddlVigenciaDocumento" runat="server">
+                                                                        </asp:DropDownList> 
+
+                                                                        </div>                                               
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div>  
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">                         
+                                                                        <label for="userName">Desde:</label>
+                                                                        <asp:TextBox data-provide="datepicker" CssClass="form-control datepickers" ID="txtFechaDesdeDocumento" runat="server" ></asp:TextBox>
+                                                                         
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                        <label>Hasta:</label>                    
+                                                                        <asp:TextBox data-provide="datepicker" CssClass="form-control datepickers" ID="txtFechaHastaDocumento" runat="server" ></asp:TextBox>
+                                                                        </div>
+                                                                                                                                    
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div> 
+
+                                                                <div class="form-group">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                        <label>Comentario/Observación</label>                      
+                                                                        <asp:TextBox CssClass="form-control" ID="txtObservacionDocumento" TextMode="MultiLine" Rows="2" runat="server" ></asp:TextBox>
+                                                                        </div>                                               
+                                                                        <div class="clearfix"></div>
+                                                                    </div>                                                          
+                                                                </div> 
+                                                                    
+
+                                                          </div>
+                                                          <div class="modal-footer">
+
+                                                                <div class="m-t-lg">
+                                                                    <asp:HiddenField ID="HFIDArchivo" Value="0" runat="server" />
+                                                                <%--<button class="btn btn-primary" data-dismiss="modal" type="button">Continue</button>--%>
+                                                                    <asp:Button ID="btnGuardarArchivo" OnClick="btnGuardarArchivo_Click" runat="server" Text="Continuar" CssClass="btn btn-primary" />
+                                                                    <button class="btn btn-default" data-dismiss="modal" type="button">Cerrar</button>
+                                                              </div>
+
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+        </asp:View>
+    </asp:MultiView>
+
+ 
+
+ 
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="footer" Runat="Server">
+ 
+     <script type="text/javascript">
+         $(document).ready(function () {
+
+             $(".tooltip_html").each(function (index) {
+                 var html = $(this).parent().find(".infoHTML").html();
+                 $(this).tooltipster({
+                     content: $(html),
+                     minWidth: 200,
+                     maxWidth: 300,
+                     position: 'top',
+                     contentAsHTML: true,
+                     interactive: true
+                 });
+             });
+
+             
+
+         });
+         
+
+     </script>
+</asp:Content>

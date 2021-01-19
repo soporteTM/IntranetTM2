@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="oRegistroPedidodeVentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oRegistroPedidodeVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oRegistroPedidodeVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oActualizacionAgregarlineasPedidoVentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oActualizacionAgregarlineasPedidoVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oActualizacionAgregarlineasPedidoVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oActualizacionLineaPedidoventas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oActualizacionLineaPedidoventasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oActualizacionLineaPedidoventasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBorrarLineaPedido">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DocEntry" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LineNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBorrarLineaPedidoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBorrarLineaPedidoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionOrdenVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="docEntry" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oCov" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionOrdenVentaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="oCancelarOrdenVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docEntry" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oCancelarOrdenVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oCancelarOrdenVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oCerrarOrdenVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="docEntry" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oCerrarOrdenVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oCerrarOrdenVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBatchOrdenVenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchOrdenVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchOrdenVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oRegistroEntregaVentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oRegistroEntregaVentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oRegistroEntregaVentasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionEntregaVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="docEntry" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="eCov" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionEntregaVentaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchEntregaVenta">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchEntregaVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchEntregaVentaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oRegistroEntradaMercancia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oRegistroEntradaMercanciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oRegistroEntradaMercanciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionEntradaMercancia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tipoDoc" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="docEntry" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mCov" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oConfirmacionEntradaMercanciaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchEntradaMercancia">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchEntradaMercanciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchEntradaMercanciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBatchFacturaBoletaNotaCredito">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDoc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBatchFacturaBoletaNotaCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchFacturaBoletaNotaCreditoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBatchSocioNegocios">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchSocioNegociosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchSocioNegociosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="oBatchMaestraArticulos">
+        <s:complexType />
+      </s:element>
+      <s:element name="oBatchMaestraArticulosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oBatchMaestraArticulosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="oRegistroPedidodeVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:oRegistroPedidodeVentas" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroPedidodeVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:oRegistroPedidodeVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:oActualizacionAgregarlineasPedidoVentas" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:oActualizacionAgregarlineasPedidoVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasSoapIn">
+    <wsdl:part name="parameters" element="tns:oActualizacionLineaPedidoventas" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasSoapOut">
+    <wsdl:part name="parameters" element="tns:oActualizacionLineaPedidoventasResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoSoapIn">
+    <wsdl:part name="parameters" element="tns:oBorrarLineaPedido" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoSoapOut">
+    <wsdl:part name="parameters" element="tns:oBorrarLineaPedidoResponse" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oConfirmacionOrdenVenta" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oConfirmacionOrdenVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oCancelarOrdenVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oCancelarOrdenVenta" />
+  </wsdl:message>
+  <wsdl:message name="oCancelarOrdenVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oCancelarOrdenVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oCerrarOrdenVenta" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oCerrarOrdenVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchOrdenVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchOrdenVenta" />
+  </wsdl:message>
+  <wsdl:message name="oBatchOrdenVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchOrdenVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasSoapIn">
+    <wsdl:part name="parameters" element="tns:oRegistroEntregaVentas" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasSoapOut">
+    <wsdl:part name="parameters" element="tns:oRegistroEntregaVentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oConfirmacionEntregaVenta" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oConfirmacionEntregaVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchEntregaVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchEntregaVenta" />
+  </wsdl:message>
+  <wsdl:message name="oBatchEntregaVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchEntregaVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:oRegistroEntradaMercancia" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:oRegistroEntradaMercanciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:oConfirmacionEntradaMercancia" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:oConfirmacionEntradaMercanciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchEntradaMercanciaSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchEntradaMercancia" />
+  </wsdl:message>
+  <wsdl:message name="oBatchEntradaMercanciaSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchEntradaMercanciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchFacturaBoletaNotaCredito" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchFacturaBoletaNotaCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchSocioNegociosSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchSocioNegocios" />
+  </wsdl:message>
+  <wsdl:message name="oBatchSocioNegociosSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchSocioNegociosResponse" />
+  </wsdl:message>
+  <wsdl:message name="oBatchMaestraArticulosSoapIn">
+    <wsdl:part name="parameters" element="tns:oBatchMaestraArticulos" />
+  </wsdl:message>
+  <wsdl:message name="oBatchMaestraArticulosSoapOut">
+    <wsdl:part name="parameters" element="tns:oBatchMaestraArticulosResponse" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroPedidodeVentasHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroPedidodeVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoHttpGetIn">
+    <wsdl:part name="DocEntry" type="s:string" />
+    <wsdl:part name="LineNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaHttpGetIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="oCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaHttpGetOut" />
+  <wsdl:message name="oCancelarOrdenVentaHttpGetIn">
+    <wsdl:part name="docEntry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oCancelarOrdenVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaHttpGetIn">
+    <wsdl:part name="docEntry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchOrdenVentaHttpGetIn" />
+  <wsdl:message name="oBatchOrdenVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaHttpGetIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="eCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaHttpGetOut" />
+  <wsdl:message name="oBatchEntregaVentaHttpGetIn" />
+  <wsdl:message name="oBatchEntregaVentaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaHttpGetIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaHttpGetIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="mCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaHttpGetOut" />
+  <wsdl:message name="oBatchEntradaMercanciaHttpGetIn" />
+  <wsdl:message name="oBatchEntradaMercanciaHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoHttpGetIn">
+    <wsdl:part name="Fecha" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchSocioNegociosHttpGetIn" />
+  <wsdl:message name="oBatchSocioNegociosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchMaestraArticulosHttpGetIn" />
+  <wsdl:message name="oBatchMaestraArticulosHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroPedidodeVentasHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroPedidodeVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionAgregarlineasPedidoVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oActualizacionLineaPedidoventasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoHttpPostIn">
+    <wsdl:part name="DocEntry" type="s:string" />
+    <wsdl:part name="LineNum" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oBorrarLineaPedidoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaHttpPostIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="oCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionOrdenVentaHttpPostOut" />
+  <wsdl:message name="oCancelarOrdenVentaHttpPostIn">
+    <wsdl:part name="docEntry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oCancelarOrdenVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaHttpPostIn">
+    <wsdl:part name="docEntry" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oCerrarOrdenVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchOrdenVentaHttpPostIn" />
+  <wsdl:message name="oBatchOrdenVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntregaVentasHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaHttpPostIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="eCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntregaVentaHttpPostOut" />
+  <wsdl:message name="oBatchEntregaVentaHttpPostIn" />
+  <wsdl:message name="oBatchEntregaVentaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaHttpPostIn">
+    <wsdl:part name="path" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oRegistroEntradaMercanciaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaHttpPostIn">
+    <wsdl:part name="tipoDoc" type="s:string" />
+    <wsdl:part name="docEntry" type="s:string" />
+    <wsdl:part name="mCov" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oConfirmacionEntradaMercanciaHttpPostOut" />
+  <wsdl:message name="oBatchEntradaMercanciaHttpPostIn" />
+  <wsdl:message name="oBatchEntradaMercanciaHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoHttpPostIn">
+    <wsdl:part name="Fecha" type="s:string" />
+    <wsdl:part name="TipoDoc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchFacturaBoletaNotaCreditoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchSocioNegociosHttpPostIn" />
+  <wsdl:message name="oBatchSocioNegociosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="oBatchMaestraArticulosHttpPostIn" />
+  <wsdl:message name="oBatchMaestraArticulosHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="TransmeridianSoap">
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para el registro de pedido de ventas, el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroPedidodeVentasSoapIn" />
+      <wsdl:output message="tns:oRegistroPedidodeVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de agregar lineas al pedido de ventas y actualizar el mismo, este WebMethod recibe un xml del sistema core    </wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionAgregarlineasPedidoVentasSoapIn" />
+      <wsdl:output message="tns:oActualizacionAgregarlineasPedidoVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de Actualizar una linea de un pedido de ventas ya creado, este webmethod recibe un XML el cual debe contar con el DocNum del pedido generado</wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionLineaPedidoventasSoapIn" />
+      <wsdl:output message="tns:oActualizacionLineaPedidoventasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de eliminar una linea de la orden de venta, recibe dos parametros enteros (DocEntry y LineNum)</wsdl:documentation>
+      <wsdl:input message="tns:oBorrarLineaPedidoSoapIn" />
+      <wsdl:output message="tns:oBorrarLineaPedidoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la orden de venta (tipoDoc 17), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionOrdenVentaSoapIn" />
+      <wsdl:output message="tns:oConfirmacionOrdenVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cancelar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCancelarOrdenVentaSoapIn" />
+      <wsdl:output message="tns:oCancelarOrdenVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cerrar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCerrarOrdenVentaSoapIn" />
+      <wsdl:output message="tns:oCerrarOrdenVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de por confirmacion en recepcion del sistema core en las ordenes de venta, este webmethod realiza una consulta y envia un xml</wsdl:documentation>
+      <wsdl:input message="tns:oBatchOrdenVentaSoapIn" />
+      <wsdl:output message="tns:oBatchOrdenVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntregaVentasSoapIn" />
+      <wsdl:output message="tns:oRegistroEntregaVentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrega de venta (TipoDoc 15), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntregaVentaSoapIn" />
+      <wsdl:output message="tns:oConfirmacionEntregaVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las entregas de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntregaVentaSoapIn" />
+      <wsdl:output message="tns:oBatchEntregaVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntradaMercanciaSoapIn" />
+      <wsdl:output message="tns:oRegistroEntradaMercanciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrada de mercancia (tipoDoc 20), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntradaMercanciaSoapIn" />
+      <wsdl:output message="tns:oConfirmacionEntradaMercanciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las ordenes de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntradaMercanciaSoapIn" />
+      <wsdl:output message="tns:oBatchEntradaMercanciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los documentos de factura de deudores del dia, recibe como parametros de entrada Datetime con la fecha del dia yyyy-MM-dd, string TipoDoc</wsdl:documentation>
+      <wsdl:input message="tns:oBatchFacturaBoletaNotaCreditoSoapIn" />
+      <wsdl:output message="tns:oBatchFacturaBoletaNotaCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Socios de Negocios no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchSocioNegociosSoapIn" />
+      <wsdl:output message="tns:oBatchSocioNegociosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Articulos no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchMaestraArticulosSoapIn" />
+      <wsdl:output message="tns:oBatchMaestraArticulosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransmeridianHttpGet">
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para el registro de pedido de ventas, el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroPedidodeVentasHttpGetIn" />
+      <wsdl:output message="tns:oRegistroPedidodeVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de agregar lineas al pedido de ventas y actualizar el mismo, este WebMethod recibe un xml del sistema core    </wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionAgregarlineasPedidoVentasHttpGetIn" />
+      <wsdl:output message="tns:oActualizacionAgregarlineasPedidoVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de Actualizar una linea de un pedido de ventas ya creado, este webmethod recibe un XML el cual debe contar con el DocNum del pedido generado</wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionLineaPedidoventasHttpGetIn" />
+      <wsdl:output message="tns:oActualizacionLineaPedidoventasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de eliminar una linea de la orden de venta, recibe dos parametros enteros (DocEntry y LineNum)</wsdl:documentation>
+      <wsdl:input message="tns:oBorrarLineaPedidoHttpGetIn" />
+      <wsdl:output message="tns:oBorrarLineaPedidoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la orden de venta (tipoDoc 17), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionOrdenVentaHttpGetIn" />
+      <wsdl:output message="tns:oConfirmacionOrdenVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cancelar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCancelarOrdenVentaHttpGetIn" />
+      <wsdl:output message="tns:oCancelarOrdenVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cerrar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCerrarOrdenVentaHttpGetIn" />
+      <wsdl:output message="tns:oCerrarOrdenVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de por confirmacion en recepcion del sistema core en las ordenes de venta, este webmethod realiza una consulta y envia un xml</wsdl:documentation>
+      <wsdl:input message="tns:oBatchOrdenVentaHttpGetIn" />
+      <wsdl:output message="tns:oBatchOrdenVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntregaVentasHttpGetIn" />
+      <wsdl:output message="tns:oRegistroEntregaVentasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrega de venta (TipoDoc 15), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntregaVentaHttpGetIn" />
+      <wsdl:output message="tns:oConfirmacionEntregaVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las entregas de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntregaVentaHttpGetIn" />
+      <wsdl:output message="tns:oBatchEntregaVentaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntradaMercanciaHttpGetIn" />
+      <wsdl:output message="tns:oRegistroEntradaMercanciaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrada de mercancia (tipoDoc 20), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntradaMercanciaHttpGetIn" />
+      <wsdl:output message="tns:oConfirmacionEntradaMercanciaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las ordenes de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntradaMercanciaHttpGetIn" />
+      <wsdl:output message="tns:oBatchEntradaMercanciaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los documentos de factura de deudores del dia, recibe como parametros de entrada Datetime con la fecha del dia yyyy-MM-dd, string TipoDoc</wsdl:documentation>
+      <wsdl:input message="tns:oBatchFacturaBoletaNotaCreditoHttpGetIn" />
+      <wsdl:output message="tns:oBatchFacturaBoletaNotaCreditoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Socios de Negocios no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchSocioNegociosHttpGetIn" />
+      <wsdl:output message="tns:oBatchSocioNegociosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Articulos no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchMaestraArticulosHttpGetIn" />
+      <wsdl:output message="tns:oBatchMaestraArticulosHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TransmeridianHttpPost">
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para el registro de pedido de ventas, el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroPedidodeVentasHttpPostIn" />
+      <wsdl:output message="tns:oRegistroPedidodeVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de agregar lineas al pedido de ventas y actualizar el mismo, este WebMethod recibe un xml del sistema core    </wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionAgregarlineasPedidoVentasHttpPostIn" />
+      <wsdl:output message="tns:oActualizacionAgregarlineasPedidoVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de Actualizar una linea de un pedido de ventas ya creado, este webmethod recibe un XML el cual debe contar con el DocNum del pedido generado</wsdl:documentation>
+      <wsdl:input message="tns:oActualizacionLineaPedidoventasHttpPostIn" />
+      <wsdl:output message="tns:oActualizacionLineaPedidoventasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Webmethod encargado de eliminar una linea de la orden de venta, recibe dos parametros enteros (DocEntry y LineNum)</wsdl:documentation>
+      <wsdl:input message="tns:oBorrarLineaPedidoHttpPostIn" />
+      <wsdl:output message="tns:oBorrarLineaPedidoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la orden de venta (tipoDoc 17), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionOrdenVentaHttpPostIn" />
+      <wsdl:output message="tns:oConfirmacionOrdenVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cancelar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCancelarOrdenVentaHttpPostIn" />
+      <wsdl:output message="tns:oCancelarOrdenVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado para cerrar orden de venta, recibe un parametro de tipo entero (DocEntry)</wsdl:documentation>
+      <wsdl:input message="tns:oCerrarOrdenVentaHttpPostIn" />
+      <wsdl:output message="tns:oCerrarOrdenVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de por confirmacion en recepcion del sistema core en las ordenes de venta, este webmethod realiza una consulta y envia un xml</wsdl:documentation>
+      <wsdl:input message="tns:oBatchOrdenVentaHttpPostIn" />
+      <wsdl:output message="tns:oBatchOrdenVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntregaVentasHttpPostIn" />
+      <wsdl:output message="tns:oRegistroEntregaVentasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrega de venta (TipoDoc 15), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntregaVentaHttpPostIn" />
+      <wsdl:output message="tns:oConfirmacionEntregaVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las entregas de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntregaVentaHttpPostIn" />
+      <wsdl:output message="tns:oBatchEntregaVentaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Methos encargado de registrar un Entrega de venta en base a un pedido , el cual recibe un archivo xml enviado del sistema core </wsdl:documentation>
+      <wsdl:input message="tns:oRegistroEntradaMercanciaHttpPostIn" />
+      <wsdl:output message="tns:oRegistroEntradaMercanciaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Web Method encargado de recibir un parametro con la confirmacion de la Entrada de mercancia (tipoDoc 20), recibe codigo 01 para recibido y 02 para error en confirmacion</wsdl:documentation>
+      <wsdl:input message="tns:oConfirmacionEntradaMercanciaHttpPostIn" />
+      <wsdl:output message="tns:oConfirmacionEntradaMercanciaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod encargado de enviar la bolsa de pendientes de confirmacion en recepcion del sistema core en las ordenes de venta</wsdl:documentation>
+      <wsdl:input message="tns:oBatchEntradaMercanciaHttpPostIn" />
+      <wsdl:output message="tns:oBatchEntradaMercanciaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los documentos de factura de deudores del dia, recibe como parametros de entrada Datetime con la fecha del dia yyyy-MM-dd, string TipoDoc</wsdl:documentation>
+      <wsdl:input message="tns:oBatchFacturaBoletaNotaCreditoHttpPostIn" />
+      <wsdl:output message="tns:oBatchFacturaBoletaNotaCreditoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Socios de Negocios no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchSocioNegociosHttpPostIn" />
+      <wsdl:output message="tns:oBatchSocioNegociosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebMethod Encargado de realizar un envio batch de los Articulos no procesados por el WS del sistema core, los cuales vienen asignados por el codigo '2' para cuando es error y '0' para cuando es pendiente por actualizar</wsdl:documentation>
+      <wsdl:input message="tns:oBatchMaestraArticulosHttpPostIn" />
+      <wsdl:output message="tns:oBatchMaestraArticulosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransmeridianSoap" type="tns:TransmeridianSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <soap:operation soapAction="http://tempuri.org/oRegistroPedidodeVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <soap:operation soapAction="http://tempuri.org/oActualizacionAgregarlineasPedidoVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <soap:operation soapAction="http://tempuri.org/oActualizacionLineaPedidoventas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <soap:operation soapAction="http://tempuri.org/oBorrarLineaPedido" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <soap:operation soapAction="http://tempuri.org/oConfirmacionOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <soap:operation soapAction="http://tempuri.org/oCancelarOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <soap:operation soapAction="http://tempuri.org/oCerrarOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <soap:operation soapAction="http://tempuri.org/oBatchOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <soap:operation soapAction="http://tempuri.org/oRegistroEntregaVentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <soap:operation soapAction="http://tempuri.org/oConfirmacionEntregaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <soap:operation soapAction="http://tempuri.org/oBatchEntregaVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <soap:operation soapAction="http://tempuri.org/oRegistroEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <soap:operation soapAction="http://tempuri.org/oConfirmacionEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <soap:operation soapAction="http://tempuri.org/oBatchEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <soap:operation soapAction="http://tempuri.org/oBatchFacturaBoletaNotaCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <soap:operation soapAction="http://tempuri.org/oBatchSocioNegocios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <soap:operation soapAction="http://tempuri.org/oBatchMaestraArticulos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransmeridianSoap12" type="tns:TransmeridianSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <soap12:operation soapAction="http://tempuri.org/oRegistroPedidodeVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <soap12:operation soapAction="http://tempuri.org/oActualizacionAgregarlineasPedidoVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <soap12:operation soapAction="http://tempuri.org/oActualizacionLineaPedidoventas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <soap12:operation soapAction="http://tempuri.org/oBorrarLineaPedido" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <soap12:operation soapAction="http://tempuri.org/oConfirmacionOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <soap12:operation soapAction="http://tempuri.org/oCancelarOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <soap12:operation soapAction="http://tempuri.org/oCerrarOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <soap12:operation soapAction="http://tempuri.org/oBatchOrdenVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <soap12:operation soapAction="http://tempuri.org/oRegistroEntregaVentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <soap12:operation soapAction="http://tempuri.org/oConfirmacionEntregaVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <soap12:operation soapAction="http://tempuri.org/oBatchEntregaVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <soap12:operation soapAction="http://tempuri.org/oRegistroEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <soap12:operation soapAction="http://tempuri.org/oConfirmacionEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <soap12:operation soapAction="http://tempuri.org/oBatchEntradaMercancia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <soap12:operation soapAction="http://tempuri.org/oBatchFacturaBoletaNotaCredito" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <soap12:operation soapAction="http://tempuri.org/oBatchSocioNegocios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <soap12:operation soapAction="http://tempuri.org/oBatchMaestraArticulos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransmeridianHttpGet" type="tns:TransmeridianHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <http:operation location="/oRegistroPedidodeVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <http:operation location="/oActualizacionAgregarlineasPedidoVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <http:operation location="/oActualizacionLineaPedidoventas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <http:operation location="/oBorrarLineaPedido" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <http:operation location="/oConfirmacionOrdenVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <http:operation location="/oCancelarOrdenVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <http:operation location="/oCerrarOrdenVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <http:operation location="/oBatchOrdenVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <http:operation location="/oRegistroEntregaVentas" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <http:operation location="/oConfirmacionEntregaVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <http:operation location="/oBatchEntregaVenta" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <http:operation location="/oRegistroEntradaMercancia" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <http:operation location="/oConfirmacionEntradaMercancia" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <http:operation location="/oBatchEntradaMercancia" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <http:operation location="/oBatchFacturaBoletaNotaCredito" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <http:operation location="/oBatchSocioNegocios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <http:operation location="/oBatchMaestraArticulos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TransmeridianHttpPost" type="tns:TransmeridianHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="oRegistroPedidodeVentas">
+      <http:operation location="/oRegistroPedidodeVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionAgregarlineasPedidoVentas">
+      <http:operation location="/oActualizacionAgregarlineasPedidoVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oActualizacionLineaPedidoventas">
+      <http:operation location="/oActualizacionLineaPedidoventas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBorrarLineaPedido">
+      <http:operation location="/oBorrarLineaPedido" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionOrdenVenta">
+      <http:operation location="/oConfirmacionOrdenVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oCancelarOrdenVenta">
+      <http:operation location="/oCancelarOrdenVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oCerrarOrdenVenta">
+      <http:operation location="/oCerrarOrdenVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchOrdenVenta">
+      <http:operation location="/oBatchOrdenVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntregaVentas">
+      <http:operation location="/oRegistroEntregaVentas" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntregaVenta">
+      <http:operation location="/oConfirmacionEntregaVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntregaVenta">
+      <http:operation location="/oBatchEntregaVenta" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oRegistroEntradaMercancia">
+      <http:operation location="/oRegistroEntradaMercancia" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oConfirmacionEntradaMercancia">
+      <http:operation location="/oConfirmacionEntradaMercancia" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="oBatchEntradaMercancia">
+      <http:operation location="/oBatchEntradaMercancia" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchFacturaBoletaNotaCredito">
+      <http:operation location="/oBatchFacturaBoletaNotaCredito" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchSocioNegocios">
+      <http:operation location="/oBatchSocioNegocios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="oBatchMaestraArticulos">
+      <http:operation location="/oBatchMaestraArticulos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Transmeridian">
+    <wsdl:port name="TransmeridianSoap" binding="tns:TransmeridianSoap">
+      <soap:address location="http://10.93.185.22/WSTM/WsTMGrupo1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransmeridianSoap12" binding="tns:TransmeridianSoap12">
+      <soap12:address location="http://10.93.185.22/WSTM/WsTMGrupo1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransmeridianHttpGet" binding="tns:TransmeridianHttpGet">
+      <http:address location="http://10.93.185.22/WSTM/WsTMGrupo1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TransmeridianHttpPost" binding="tns:TransmeridianHttpPost">
+      <http:address location="http://10.93.185.22/WSTM/WsTMGrupo1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

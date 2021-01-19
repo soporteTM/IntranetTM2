@@ -1,0 +1,223 @@
+D:\_Resources\GestionFlotaTM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\_Resources\GestionFlotaTM\DAL\bin\Debug\EL.dll
+D:\_Resources\GestionFlotaTM\DAL\bin\Debug\EL.pdb
+D:\_Resources\GestionFlotaTM\DAL\bin\Debug\DAL.dll
+D:\_Resources\GestionFlotaTM\DAL\bin\Debug\DAL.pdb
+D:\_Resources\GestionFlotaTM\DAL\obj\Debug\DAL.dll
+D:\_Resources\GestionFlotaTM\DAL\obj\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\obj\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\GestionFlotaTM\GestionFlotaTM\DAL\obj\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\obj\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\obj\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH\DAL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.pdb
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.dll
+C:\Users\DEVELOPMENT\Documents\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.pdb
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\bin\Debug\EL.pdb
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.dll
+C:\Users\diana.carazas\Desktop\TransportesRRHH_1701\TransportesRRHH\DAL\obj\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\bin\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\bin\Debug\DAL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\bin\Debug\EL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\bin\Debug\EL.pdb
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\obj\Debug\DAL.dll
+F:\Transportes Meridian\_Desarrollos\Proyecto TM\DAL\obj\Debug\DAL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\angelo.bendezu\Documents\GitHub\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\diana.carazas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+F:\GitHub\DAL\bin\Debug\DAL.dll
+F:\GitHub\DAL\bin\Debug\DAL.pdb
+F:\GitHub\DAL\bin\Debug\EL.dll
+F:\GitHub\DAL\bin\Debug\EL.pdb
+F:\GitHub\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\GitHub\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\GitHub\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\GitHub\DAL\obj\Debug\DAL.dll
+F:\GitHub\DAL\obj\Debug\DAL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\rodrigo.rojas\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\diana.carazas.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\kevin.quevedo\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\kevin.quevedo.TMERIDIAN\source\repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.dll
+C:\Users\juan.gutierrez\Source\Repos\ProyectoPruebaFinal\DAL\obj\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\Intranet\DAL\bin\Debug\DAL.dll
+F:\Rodrigo\Fuentes\Intranet\DAL\bin\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\Intranet\DAL\bin\Debug\EL.dll
+F:\Rodrigo\Fuentes\Intranet\DAL\bin\Debug\EL.pdb
+F:\Rodrigo\Fuentes\Intranet\DAL\obj\Debug\DAL.dll
+F:\Rodrigo\Fuentes\Intranet\DAL\obj\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\Intranet\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\Rodrigo\Fuentes\Intranet\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\Rodrigo\Fuentes\Intranet\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\bin\Debug\DAL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\bin\Debug\DAL.pdb
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\bin\Debug\EL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\bin\Debug\EL.pdb
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\obj\Debug\DAL.dll
+C:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet\IntranetGit\DAL\obj\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\bin\Debug\DAL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\bin\Debug\DAL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\bin\Debug\EL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\bin\Debug\EL.pdb
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\obj\Debug\DAL.csproj.CopyComplete
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\obj\Debug\DAL.dll
+F:\Rodrigo\Fuentes\IntranetGit\IntranetGit\DAL\obj\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\bin\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\bin\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\bin\Debug\EL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\bin\Debug\EL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit\DAL\obj\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\IntranetGit\DAL\obj\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\DAL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\EL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\bin\Debug\EL.pdb
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\obj\Debug\DAL.dll
+D:\Francisco Camacho\Proyectos\5. Fuentes - TM\Intranet GIT\IntranetGit_21_04_20\IntranetGit\DAL\obj\Debug\DAL.pdb
+D:\IntranetGit\DAL\bin\Debug\DAL.dll
+D:\IntranetGit\DAL\bin\Debug\DAL.pdb
+D:\IntranetGit\DAL\bin\Debug\EL.dll
+D:\IntranetGit\DAL\bin\Debug\EL.pdb
+D:\IntranetGit\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\IntranetGit\DAL\obj\Debug\DAL.dll
+D:\IntranetGit\DAL\obj\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\bin\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\bin\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\bin\Debug\EL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\bin\Debug\EL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\obj\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\Intranet\TM_Intranet\DAL\obj\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\bin\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\bin\Debug\DAL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\bin\Debug\EL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\bin\Debug\EL.pdb
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\obj\Debug\DAL.dll
+C:\Users\fcamacho\OneDrive - Grupo Transmeridian\Francisco Camacho GT\Proyectos\5. Fuentes - TM\Intranet\TM_Intranet_07102020\TM_Intranet\DAL\obj\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\obj\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Intranet\TM_Intranet\DAL\obj\Debug\DAL.pdb
+D:\Fuentes\TM_Intranet\DAL\bin\Debug\DAL.dll
+D:\Fuentes\TM_Intranet\DAL\bin\Debug\DAL.pdb
+D:\Fuentes\TM_Intranet\DAL\bin\Debug\EL.dll
+D:\Fuentes\TM_Intranet\DAL\bin\Debug\EL.pdb
+D:\Fuentes\TM_Intranet\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Fuentes\TM_Intranet\DAL\obj\Debug\DAL.dll
+D:\Fuentes\TM_Intranet\DAL\obj\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\bin\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\bin\Debug\DAL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\bin\Debug\EL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\bin\Debug\EL.pdb
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.dll
+C:\Users\juan.gutierrez\Desktop\Fuentes\Intranet\TM_Intranet\DAL\obj\Debug\DAL.pdb
