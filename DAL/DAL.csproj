@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbastecimientoDAL.cs" />
+    <Compile Include="OrdTrabajoDAL.cs" />
+    <Compile Include="OrdTrabajoDetDAL.cs" />
     <Compile Include="ReporteDAL.cs" />
     <Compile Include="AlertaDAL.cs" />
     <Compile Include="CisternaDAL.cs" />

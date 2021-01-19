@@ -74,6 +74,8 @@
     <Compile Include="NombradaEL.cs" />
     <Compile Include="OrdenServicioEL.cs" />
     <Compile Include="OrdenTrabajoEL.cs" />
+    <Compile Include="OrdTrabajoDetEL.cs" />
+    <Compile Include="OrdTrabajoEL.cs" />
     <Compile Include="RendimientoEL.cs" />
     <Compile Include="ReposicionEL.cs" />
     <Compile Include="SeguimientoEL.cs" />
