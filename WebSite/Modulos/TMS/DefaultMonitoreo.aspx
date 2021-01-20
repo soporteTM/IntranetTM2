@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
     
  
-     <script type="text/javascript" src="../../App_Themes/zircos/default/assets/plugins/datatables/gridviewscroll.js"></script>
+    <script type="text/javascript" src="../../App_Themes/zircos/default/assets/plugins/datatables/gridviewscroll.js"></script>
     <script type="text/javascript">
         var gridViewScroll = null;
         $(document).ready(function () {
