@@ -185,7 +185,8 @@
                                 <asp:BoundField DataField="nro_serie" HeaderText="Numero de Serie" />
                                 <asp:BoundField DataField="nom_marca" HeaderText="Marca" />
                                 <asp:BoundField DataField="nom_modelo" HeaderText="Modelo" />
-                                <asp:BoundField DataField="precio_costo" HeaderText="Precio" />
+                                <asp:BoundField DataField="precio_costo" HeaderText="Precio" visible="false"/>
+                                <asp:BoundField DataField="Fecha_Instalacion" HeaderText="Fec. Instalacion"/>
                                 <asp:BoundField DataField="km_recorrido" HeaderText="Km Recorrido" />
                                 
                                 <%--<asp:BoundField DataField="estado_cd" HeaderText="estado_cd" />--%>

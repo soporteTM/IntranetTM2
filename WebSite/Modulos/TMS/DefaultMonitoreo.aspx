@@ -2,13 +2,61 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
     
- <script type="text/javascript">
-     
+ 
+     <script type="text/javascript" src="../../App_Themes/zircos/default/assets/plugins/datatables/gridviewscroll.js"></script>
+    <script type="text/javascript">
+        var gridViewScroll = null;
+        $(document).ready(function () {
+            $('table.juanjo tr').addClass('GridViewScrollItem');
+            $('table.juanjo tr').eq(0).addClass('GridViewScrollHeader');
+            //var ancho = $('div.container').width();
+            var ancho = $('body').width();
+            var ancho_menu = $('div.side-menu').width();
+            ancho = ancho - ancho_menu;
+            var idgrid = $('table.juanjo').attr("id");
+            gridViewScroll = new GridViewScroll({
+                elementID: idgrid,
+                width: ancho,
+                height: 350,
+                freezeColumn: true,
+                freezeFooter: false,
+                freezeColumnCssClass: "GridViewScrollItemFreeze",
+                //reezeFooterCssClass: "GridViewScrollFooterFreeze",
+                freezeHeaderRowCount: 1,
+                freezeColumnCount: 4
+                //onscroll: function (scrollTop, scrollLeft) {
+                //    console.log(scrollTop + " - " + scrollLeft);
+                //}
+            });
+            gridViewScroll.enhance();
+        });
     </script>
+
     <style type="text/css"> 
     .dropdown-menu>li>a{
         padding-left:10px;
     }
+
+        .GridViewScrollItemFreeze TD {
+            padding: 8px;
+            white-space: nowrap;
+            border-right: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            background-color: #FAFAFA;
+            color: #444444;
+        }
+
+        .GridViewScrollHeader TH, .GridViewScrollHeader TD {
+            padding: 6px 2.2px;
+            font-weight: normal;
+            white-space: nowrap;
+            border-right: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            background-color: #F4F4F4;
+            color: #999999;
+            text-align: left;
+            vertical-align: bottom;
+        }
     </style>
 
     <script type="text/javascript">
@@ -379,8 +427,8 @@
             </div>
             <asp:HiddenField ID="lblentidad0" runat="server"/>
 
-            <div class="table-responsive" style="margin-top: 10px;">
-                <asp:GridView ID="GVPlaneamiento" runat="server" cssclass="table table-striped table-bordered dataTable" gridlines="None" AutoGenerateColumns="False" 
+            <div class="table-responsive1" style="margin-top: 10px;">
+                <asp:GridView ID="GVPlaneamiento" runat="server" cssclass="table table-striped table-bordered juanjo" gridlines="None" AutoGenerateColumns="False" 
                     EmptyDataText="No se encontraron resultados" OnPreRender="GVPlaneamiento_PreRender" >
                         
                         <Columns>

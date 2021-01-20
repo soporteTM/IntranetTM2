@@ -2,29 +2,35 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     
-
-
-    <script type="text/javascript" src="../../App_Themes/zircos/default/assets/plugins/datatables/gridviewscroll.js"></script>
+    <%--<script type="text/javascript" src="../../App_Themes/zircos/default/assets/plugins/datatables/gridviewscroll.js"></script>
     <script type="text/javascript">
         var gridViewScroll = null;
-        function arregloGrilla() {
-                gridViewScroll = new GridViewScroll({
-                elementID: "GVPlaneamiento",
-                width: 850,
+        $(document).ready(function () {
+            $('table.juanjo tr').addClass('GridViewScrollItem');
+            $('table.juanjo tr').eq(0).addClass('GridViewScrollHeader');
+            //var ancho = $('div.container').width();
+            var ancho = $('body').width();
+            var ancho_menu = $('div.side-menu').width();
+            ancho = ancho - ancho_menu;
+            var idgrid = $('table.juanjo').attr("id");
+            //alert(idgrid);
+            gridViewScroll = new GridViewScroll({
+                elementID: idgrid,
+                width: ancho,
                 height: 350,
                 freezeColumn: true,
                 freezeFooter: false,
                 freezeColumnCssClass: "GridViewScrollItemFreeze",
                 //reezeFooterCssClass: "GridViewScrollFooterFreeze",
-                freezeHeaderRowCount : 1,
-                freezeColumnCount: 3
+                freezeHeaderRowCount: 1,
+                freezeColumnCount: 4
                 //onscroll: function (scrollTop, scrollLeft) {
                 //    console.log(scrollTop + " - " + scrollLeft);
                 //}
             });
             gridViewScroll.enhance();
-        }
-    </script>
+        });
+    </script>--%>
     <%--<script type="text/javascript">
         function mostrar() {
             alert('Hola mundo')
@@ -165,6 +171,27 @@
             right: 0px;
             top: -35px;
             z-index: 1000;
+        }
+
+        .GridViewScrollItemFreeze TD {
+            padding: 8px;
+            /*white-space: nowrap;*/
+            border-right: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            background-color: #FAFAFA;
+            color: #444444;
+        }
+
+        .GridViewScrollHeader TH, .GridViewScrollHeader TD {
+            padding: 8px;
+            font-weight: normal;
+            white-space: nowrap;
+            border-right: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            background-color: #F4F4F4;
+            color: #999999;
+            text-align: left;
+            vertical-align: bottom;
         }
 
         #ContentPlaceHolder1_gvDetalleServicios_wrapper .dataTables_filter,
@@ -392,13 +419,13 @@
 
             <div >
                 <asp:GridView ID="GVPlaneamiento" runat="server" GridLines="None" AutoGenerateColumns="False" EmptyDataText="No se encontraron resultados"
-                 OnRowCommand="GVPlaneamiento_RowCommand" CssClass="table table-striped table-bordered"
+                 OnRowCommand="GVPlaneamiento_RowCommand" CssClass="table table-striped table-bordered juanjo"
                 > 
                     <%--CssClass="table table-striped table-bordered" scrollable-table dataTables_scroll OnPreRender="GVPlaneamiento_PreRender"--%>
                     <%--style="overflow-x:scroll;overflow:scroll;max-height:150px;width:500px;" --%>
                 <Columns>
 
-                    <asp:TemplateField ItemStyle-CssClass="FrozenCell" HeaderStyle-CssClass="FrozenCell">
+                    <asp:TemplateField>
                         <ItemTemplate>
                             <div class="checkbox checkbox-primary">
                                 <asp:CheckBox ID="CheckBox1" runat="server" Enabled='<%# ( Convert.ToString(Eval("EstadoSegui")) == "Anulado" ? false : true)   %>' Text="." />
@@ -406,7 +433,7 @@
                         </ItemTemplate>
                         
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="TIPO/SOL" ItemStyle-CssClass="FrozenCell" HeaderStyle-CssClass="FrozenCell">
+                    <asp:TemplateField HeaderText="TIPO/SOL">
                         <ItemTemplate>
                             <asp:Label ID="lblTipoSol" runat="server" CssClass="text2" Text='<%# Eval("TS_Des") %>'></asp:Label>
                         </ItemTemplate>
